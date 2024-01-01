@@ -7,7 +7,10 @@ export const CardsProductsStyles = styled.div`
     gap:45px;
     font-family: 'Montserrat';
     font-style: normal;
-    margin:100px 0
+    padding:100px 0;
+    /* border-top-right-radius: 48px;
+    border-top-left-radius: 48px; */
+    /* background-color: #fff; */
     `
 
 export const CardsWrapperHeading = styled.div`
@@ -36,6 +39,7 @@ export const CardsWrapperHeading = styled.div`
     align-items: center;
     gap: 20px;
    max-width: 1000px
+  
     `
 
     export const CardContainer = styled.div`
@@ -44,21 +48,36 @@ export const CardsWrapperHeading = styled.div`
     border-radius: 48px;
     padding: 30px;
     width: 300px;
+    height: 500px;
     gap:15px;
     font-family: 'Montserrat',system-ui ;
-    background-color: #ede1ff;
+    background-color: #fff;
+    justify-content:space-between;
+    img{
+        width: 100%;
+        height: 220px;
+
+    }
+    p{
+        color:#777;
+    }
+    span{
+        font-weight: 600;
+    }
     `
 
     export const BuyInfo = styled.div`
     display:flex;
     justify-content: space-between;
     align-items: center;
+    /* flex-direction: column; */
     
     button{
         background-color: #8330C4;
         cursor: pointer;
         border: none;
         color: #fff;
-        padding: 10px 20px;
+        padding: 15px 30px;
         border-radius: 78px ;
+        /* width: 100%; */
     }`

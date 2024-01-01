@@ -8,7 +8,7 @@ function CardProduct({image, name, description,price}) {
         <h3>{name}</h3>
         <p>{description}</p>
         <BuyInfo>
-            <p>${price}</p>
+            <span>${price}</span>
             <button>BUY</button>
         </BuyInfo>
     </CardContainer>
