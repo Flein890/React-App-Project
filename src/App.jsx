@@ -13,6 +13,7 @@ function App() {
       <Header />
       <Hero />
       <Section />
+      <CardsProducts/>
       {/* <Layout>
        
         <Categories/>

@@ -22,8 +22,7 @@ export const ContainerStyles = styled.div`
 export const SectionSyles = styled.section`
     display: flex;
     width: 100%;
-    border-top-right-radius: 40px;
-    border-top-left-radius: 40px;
+   border-radius: 48px;
     background-color:#FEF2FF ;
     padding:0 100px;
 `

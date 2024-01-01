@@ -16,11 +16,12 @@ export const HeroStyles = styled.div`
   h1{
     margin-top:6rem;
     margin-bottom: 0;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 7rem;
     max-width: 800px;
     text-align: center; 
     line-height: 90px;
+    font-family: 'Montserrat';
   }
   p{
     text-align: center;

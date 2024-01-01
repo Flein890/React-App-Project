@@ -31,7 +31,7 @@ function Footer() {
       <div className='support'>
         <span><a href="">Privacy Policy</a></span>
         <span><a href="">Terms</a></span>
-        <span><a href="">franco.s.villanova@hotmail.com</a></span>
+        <span><a className='email' href="">franco.s.villanova@hotmail.com</a></span>
       </div>
     
     </FooterStyles>
