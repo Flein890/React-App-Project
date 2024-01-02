@@ -29,13 +29,26 @@ export const HeroStyles = styled.div`
     max-width: 800px;
     font-weight: 400;
   }
-  video{
-    position: absolute;
-    opacity:.7;
-    object-fit: cover;
-    width: 100%;
-    height: 100vh;
-    z-index: -100;
+
+  @media (max-width: 800px) {
+    h1{
+      font-size: 5rem;
+      line-height: 70px;
+    }
+    p{
+      font-size: 1.25em;
+    }
+    gap: 35px;
+  }
+
+  @media (max-width: 576px) {
+    h1{
+      font-size: 3rem;
+      line-height: 50px;
+    }
+    p{
+      font-size: 1.2em;
+    }
   }
 
 `
@@ -57,5 +70,16 @@ justify-content: center;
 img{
   width: 40px;
   height: 40px;
+}
+
+@media (max-width: 576px) {
+  bottom: 30px;
+  left: 30px;
+  width: 50px;
+  height: 50px;
+  img{
+    width: 25px;
+    height: 25px;
+  }
 }
 `

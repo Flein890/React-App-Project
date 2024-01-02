@@ -61,4 +61,25 @@ export const FooterStyles = styled.footer`
         color: #eee;
     }
    }
+
+   @media (max-width: 768px) {
+       .container{
+        flex-direction: column;
+       }
+   }
+
+   @media (max-width: 576px) {
+       .footer-left{
+       padding: 0 20px;
+       }
+       .footer-right{
+        flex-direction: column;
+        align-items: start;
+        padding-left: 20px;
+       }
+       .support{
+           gap: 10px;
+           flex-direction: column;
+       }
+   }
     `

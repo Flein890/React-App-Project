@@ -25,4 +25,17 @@ export const SectionSyles = styled.section`
    border-radius: 48px;
     background-color:#FEF2FF ;
     padding:0 100px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        padding: 100px 100px 0 100px;
+        gap: 25px;
+    }
+    @media (max-width: 576px) {
+        h2{
+            font-size: 1.56em;
+            
+        }
+        padding: 50px 50px 0 50px;
+    }
 `

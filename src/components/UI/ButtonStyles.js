@@ -16,8 +16,6 @@ export const ButtonStyles = styled.button`
         background-color: #9942DB;
     }
 
-   
-
     @keyframes bubble{
         0%{
             transform: scaleX(1);
@@ -28,5 +26,11 @@ export const ButtonStyles = styled.button`
         100%{
             transform: scaleX(1);
         }
+
+    }
+
+    @media (max-width: 576px) {
+        font-size: 1em;
+        padding: 15px 30px;
     }
     `

@@ -30,7 +30,26 @@ export const CardsWrapperHeading = styled.div`
         border-radius: 50%;
         width: 100px;
         height: 100px;
-    }`
+    }
+    @media (max-width: 768px) {
+        gap: 10px;
+        h2{
+            font-size: 5rem;
+            line-height: 65px;
+        }
+    }
+    @media (max-width: 500px) {
+        h2{
+            font-size: 4rem;
+            line-height: 55px;
+            width:60%;
+        }
+        video{
+            width: 80px;
+            height: 80px;
+        }
+    }
+    `
 
     export const CardsWrapper = styled.div`
     display: flex;
