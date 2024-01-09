@@ -6,7 +6,7 @@ function Header() {
   return (
     <>
     <HeaderContainer>
-    <HeaderStyles>
+      <HeaderStyles>
         <img src={bg} alt="" className='logo' />
         <nav className='nav'>
             <ul className='ul'>
@@ -16,7 +16,7 @@ function Header() {
             </ul>
         </nav>
         <LoginBtn></LoginBtn>
-    </HeaderStyles>
+      </HeaderStyles>
     </HeaderContainer>
     
        

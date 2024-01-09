@@ -96,7 +96,12 @@ export const CardsWrapperHeading = styled.div`
         cursor: pointer;
         border: none;
         color: #fff;
-        padding: 15px 30px;
+        padding: 10px 30px;
         border-radius: 78px ;
+        
         /* width: 100%; */
-    }`
+    }
+    button:hover{
+        filter: contrast(100);
+    }
+    `
