@@ -2,6 +2,7 @@ import React from 'react'
 import { ContainerStyles, SectionSyles } from './SectionStyles'
 import Move from '../../assets/video/Move.mp4'
 import Button from '../UI/Button'
+import ScrollReveal from 'scrollreveal'
 
 function Section() {
 

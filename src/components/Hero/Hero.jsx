@@ -1,7 +1,7 @@
 import React from 'react'
 import { HeroStyles, DownArrow } from './HeroStyles.js'
 import Button from '../UI/Button.jsx'
-import laptop from '../../assets/video/laptop.mp4'
+import ScrollReveal from 'scrollreveal'
 
 function Hero() {
 
