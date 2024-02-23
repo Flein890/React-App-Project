@@ -1,27 +1,23 @@
 import React from 'react'
-import Header from './components/Header/Header.jsx'
-import Hero  from './components/Hero/Hero'
-import Categories from './components/Categorias/Categories'
-import CardsProducts from './components/Products/CardsProducts.jsx'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout/Layout'
-import Footer from './components/Footer/Footer'
-import Section from './components/Section/Section.jsx'
+import NotFound from './components/NotFound/NotFound'
+import Header from './components/Header/Header'
+import CardsProducts from './components/Products/CardsProducts'
 
 function App() {
   return (
-    <>
-      <Header />
-      <Hero />
-      <Section />
-      <CardsProducts/>
-      {/* <Layout>
-       
-        <Categories/>
-        <CardsProducts/>
-      </Layout> */}
-      <Footer />
-     
-    </>
+    <BrowserRouter>
+     <Header/>
+      <Routes>
+        <Route path='/' element={<Layout/>}/>
+        <Route path='products' element={<CardsProducts/>}/>
+        {/* <Route path='login' element={<Login/>}/> */}
+        {/* <Route path='contact' element={<Contact/>}/> */}
+        {/* <Route path='about' element={<About/>}/> */}
+        <Route path='*' element={<NotFound/>}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

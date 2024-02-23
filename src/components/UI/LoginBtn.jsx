@@ -1,8 +1,9 @@
 import React from 'react'
 import { LoginBtnStyles } from './LoginBtnStyles'
+import { Link } from 'react-router-dom'
 function LoginBtn() {
-  return (
-    <LoginBtnStyles>LOG IN</LoginBtnStyles>
+  return (<Link to="login"><LoginBtnStyles>LOG IN</LoginBtnStyles></Link>
+    
   )
 }
 

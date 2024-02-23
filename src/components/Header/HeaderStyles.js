@@ -46,8 +46,7 @@ export const HeaderStyles = styled.header`
 }
 
 .logo{
-    width: 50px;
-    padding-right: 30px;
+    width: 30px;
 }
 
 

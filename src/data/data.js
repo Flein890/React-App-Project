@@ -51,4 +51,4 @@ export const data = JSON.parse(`[
 
 
 `);
-console.log(data)
+// console.log(data)

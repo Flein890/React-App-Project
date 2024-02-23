@@ -1,18 +1,20 @@
 import React from 'react'
 import { HeaderStyles, HeaderContainer } from './HeaderStyles'
-import bg from '../../images/bg.jpg'
+import logo from '../../images/logo.svg'
 import LoginBtn from '../UI/LoginBtn'
+import { Link , Outlet } from 'react-router-dom'
 function Header() {
   return (
     <>
     <HeaderContainer>
       <HeaderStyles>
-        <img src={bg} alt="" className='logo' />
+        <img src={logo} alt="" className='logo' />
         <nav className='nav'>
             <ul className='ul'>
-                <li><a className='active link' href='#'>Home</a></li>
-                <li><a className='link' href='#'>About</a></li>
-                <li><a className='link' href='#'>Contact</a></li>
+                <li><Link className='link active' to="/">Home</Link></li>
+                <li><Link className='link' to="about">About</Link></li>
+                <li><Link className='link' to="contact">Contact</Link></li>
+                <li><Link className='link' to="products">Products</Link></li>
             </ul>
         </nav>
         <LoginBtn></LoginBtn>
