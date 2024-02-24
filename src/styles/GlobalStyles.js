@@ -18,7 +18,9 @@ export const GlobalStyles = createGlobalStyle`
 }
 *::selection{
     background-color: #8330C4;
+    color:#fff;
 }
+
 
 html{
     scroll-behavior: smooth;

@@ -1,4 +1,5 @@
 import React from 'react'
+import logo from '../../images/logo.svg'
 import { FooterStyles } from './FooterStyles'
 
 function Footer() {
@@ -6,7 +7,7 @@ function Footer() {
     <FooterStyles>
       <div className='container'>
         <div className='footer-left'>
-        <img src="" alt="logo" />
+        <img src={logo} alt="logo" />
         <h3>Create Personalized videos at scale</h3>
         </div>
         <div className='footer-right'>

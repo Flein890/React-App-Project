@@ -20,15 +20,16 @@ export const FooterStyles = styled.footer`
     align-items: flex-start;
     justify-content: start;
     flex-direction: column;
+    gap: 20px;
 
      h3{
         font-size: 28px;
         font-weight: 600;
         /* width: 100px; */
      }
-     img{
-
-     }
+    .logo{
+        //ver el orden de prioridades
+    }
     }
 .footer-right{
     display: flex;

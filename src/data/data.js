@@ -5,7 +5,8 @@ export const data = JSON.parse(`[
         "price": 19.99,
         "description": "Source Filmmaker is a tool used to create and capture videos that works on the Source engine.",
         "category":"Personal Use",
-        "image": "https://cdn2.steamgriddb.com/icon/64b3ec1fdfacead70c3a9bd77d824306/32/512x512.png" 
+        "image": "https://cdn2.steamgriddb.com/icon/64b3ec1fdfacead70c3a9bd77d824306/32/512x512.png",
+        "slogan": "pe"
     },
     {
         "id": 2,

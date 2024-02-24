@@ -3,21 +3,28 @@ import { ContainerStyles, SectionSyles } from './SectionStyles'
 import Move from '../../assets/video/Move.mp4'
 import Button from '../UI/Button'
 import ScrollReveal from 'scrollreveal'
+import { useEffect } from 'react'
 
 function Section() {
 
-  sr.reveal('.side-sub',{
-    origin: 'left',
-    distance: '400px',
-    duration: 2000,
-    opacity:0,
+  useEffect(() => {
+    window.sr= ScrollReveal();
+
+    sr.reveal('.side-sub',{
+      origin: 'left',
+      distance: '400px',
+      duration: 2000,
+      opacity:0,
+    })
+    sr.reveal('.video',{
+      origin: 'right',
+      distance: '50px',
+      duration: 2000,
+      opacity:0,
+    })
   })
-  sr.reveal('.video',{
-    origin: 'bottom',
-    distance: '100px',
-    duration: 2000,
-    opacity:0,
-  })
+
+ 
 
   return (<SectionSyles>
     <ContainerStyles>

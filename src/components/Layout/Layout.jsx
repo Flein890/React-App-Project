@@ -1,18 +1,17 @@
-import Header from "../Header/Header"
 import Hero from "../Hero/Hero"
 import Section from "../Section/Section"
 import CardsProducts from "../Products/CardsProducts"
 import Footer from "../Footer/Footer"
-import { Outlet } from "react-router-dom"
+import Featured from "../Featured/Featured"
+import ScrollReveal from "scrollreveal"
 
 function Layout() {
+
   return (<>
-      <Header />
-      <Outlet></Outlet>
       <Hero />
+      <Featured/>
       <Section />
       {/* <Layout>
-       
         <Categories/>
         <CardsProducts/>
       </Layout> */}
