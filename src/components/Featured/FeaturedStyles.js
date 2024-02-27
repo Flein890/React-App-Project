@@ -3,28 +3,30 @@ import styled from "styled-components";
 
 export const FeaturedWrapperStyles = styled.div`
    display: grid;
-   background-color: #000;
+   background-color: #EDE1FF;
   grid-template-columns: ${({ gridLength }) => `repeat(${gridLength}, 1fr)`};
+  padding: 40px 40px 0 40px;
   gap: 40px;
-  padding-top: 40px;
-  margin: 40px 0 40px 0;
+  /* margin-top:40px; */
+  margin:40px;
+  place-items:center;
+  border-radius: 48px;
 
-  overflow: scroll;
+  overflow-x: scroll;
 
   &::-webkit-scrollbar {
     height: 6px;
-    width: 4px;
+    width:1px;
     background: transparent;
   }
 
   &::-webkit-scrollbar-thumb {
-    background: #8330C4;
+    /* background: #8330C4; */
+    /* background:#fafafa; */
+    background: #000;
     border-radius: 5px;
   }
 
-  &::-webkit-scrollbar:vertical {
-    display: none;
-  }
 `;
 
 export const CardStyles = styled.div`
@@ -33,19 +35,15 @@ export const CardStyles = styled.div`
     border-radius: 48px;
     justify-content: center;
     align-items: center;
-    background-color: #EDE1FF ;
-    /* background-color:red; */
+    background-color: #fafafa; ;
     padding: 1rem 1.7rem;
-    width: 300px;
+    width: 400px;
     height: 200px;
     gap:1rem;
     font-family: 'Montserrat',system-ui ;
-    justify-content:space-between;
+    justify-content:space-around;
     img{
-        width:50%;
+        width:30%;
         object-fit: scale-down;
       }
-        `
-
- export const Card = styled.div`
         `

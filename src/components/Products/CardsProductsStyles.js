@@ -7,7 +7,7 @@ export const CardsProductsStyles = styled.div`
     gap:45px;
     font-family: 'Montserrat';
     font-style: normal;
-    padding:100px 0;
+    padding:150px 0;
     /* border-top-right-radius: 48px;
     border-top-left-radius: 48px; */
     /* background-color: #fff; */

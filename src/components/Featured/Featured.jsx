@@ -1,5 +1,5 @@
 import React from 'react'
-import { FeaturedWrapperStyles, CardStyles,Card } from './FeaturedStyles'
+import { FeaturedWrapperStyles} from './FeaturedStyles'
 import {data} from '../../data/data.js'
 import FeaturedCard from './FeaturedCard.jsx'
 function Featured() {
