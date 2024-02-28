@@ -29,19 +29,21 @@ export const LeftSide = styled.div`
             font-weight: 800;
         }
     `
-export const InputForm = styled.input`
-border-radius: 50px;
-border:1px solid #cacaca;
-padding: 12px 13px;
-height: 40px;
-width: 100%;
-background-color: #fff;
 
-&:focus{
-    outline: none;
-    border:1px solid black;
-}
-`
+    //PASAR EL INPUT A UN COMPONENTE
+// export const InputForm = styled.input`
+// border-radius: 50px;
+// border:1px solid #cacaca;
+// padding: 12px 13px;
+// height: 40px;
+// width: 100%;
+// background-color: #fff;
+
+// &:focus{
+//     outline: none;
+//     border:1px solid black;
+// }
+// `
 
 export const FormContainer = styled.form`
        display:flex;
@@ -71,15 +73,15 @@ img{
     height: 40px;
 }
 `
-export const LoginBtn = styled.button`
-background-color: #9e4cdc;
-border-radius: 50px;
-padding: 12px 13px;
-color:#fff;
-border: none;
-width: 100%;
-cursor: pointer;
-`
+// export const LoginBtn = styled.button`
+// background-color: #9e4cdc;
+// border-radius: 50px;
+// padding: 12px 13px;
+// color:#fff;
+// border: none;
+// width: 100%;
+// cursor: pointer;
+// `
 
 //____________________________________________________-
 

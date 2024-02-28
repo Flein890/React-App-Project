@@ -7,4 +7,5 @@ export const LoginBtnStyles = styled.button`
     background-color: #8330C4;
     color: white;
     padding: 10px 25px;
-    cursor: pointer;`
+    cursor: pointer;
+    `

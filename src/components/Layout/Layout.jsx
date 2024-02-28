@@ -9,7 +9,7 @@ function Layout() {
 
   return (<>
       <Hero />
-      <Featured/>
+      {/* <Featured/> */}
       <Section />
   
       {/* <Layout>

@@ -3,12 +3,19 @@ import { HeaderStyles, HeaderContainer } from './HeaderStyles'
 import logo from '../../images/logo.svg'
 import LoginBtn from '../UI/LoginBtn'
 import { Link , Outlet } from 'react-router-dom'
+import Button from '../UI/Button'
+import { BussinessName } from './HeaderStyles'
+import { LogoContainer, ToLogin } from './HeaderStyles'
 function Header() {
   return (
     <>
     <HeaderContainer>
       <HeaderStyles>
-        <img src={logo} alt="" className='logo' />
+        <LogoContainer>
+          <img src={logo} alt="" className='logo' />
+          <BussinessName>Papu</BussinessName>
+       </LogoContainer>
+       
         <nav className='nav'>
             <ul className='ul'>
                 <li><Link className='link active' to="/">Home</Link></li>
@@ -17,7 +24,9 @@ function Header() {
                 <li><Link className='link' to="products">Products</Link></li>
             </ul>
         </nav>
-        <LoginBtn></LoginBtn>
+        
+        <Link to ='login'><ToLogin>LOGIN</ToLogin></Link>
+        <a className='hamburger' href=""><span></span><span></span></a>
       </HeaderStyles>
     </HeaderContainer>
     

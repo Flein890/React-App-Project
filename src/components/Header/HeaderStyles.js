@@ -24,9 +24,13 @@ export const HeaderStyles = styled.header`
     align-items: center;
     justify-content: space-between;
     gap: 25px;
-    padding: 0px 15px;
+    padding-left: 15px;
     z-index: 1000;
 
+.hamburguer
+{
+    display: none;
+}    
 .nav{
     display: flex;
     align-items: center;
@@ -49,5 +53,57 @@ export const HeaderStyles = styled.header`
     width: 30px;
 }
 
+@media (max-width: 976px) {
+    &{
+        width: 100vw;
+        margin-top: 0;
+        border-radius: 0;
+        box-shadow: none;
+        justify-content: space-between;
+        background-color: #fafafa;
+    }
+    .ul{
+        display: none;
+    }
+    .hamburguer{
+        display: flex;
+        span{
+            width: 50px;
+            height: 3px;
+            background-color: #000;
+        }
+    }
 
+}
+
+`
+export const BussinessName = styled.span`
+font-weight: 500;
+display: none;
+
+@media (max-width: 976px) {
+    display: block;
+}
+`
+
+export const LogoContainer = styled.div`
+display: flex;
+align-items: center;
+gap: 10px;
+justify-content: center;
+`
+
+export const ToLogin = styled.button`
+padding: 10px 25px;
+border-radius: 2em;
+font-family: 'Montserrat',system-ui ;
+background-color: #8330C4;
+cursor: pointer;
+outline: none;
+border: none;
+color:#fff;
+
+&:hover{
+    
+}
 `

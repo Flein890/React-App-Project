@@ -28,7 +28,7 @@ function Section() {
 
   return (<SectionSyles>
     <ContainerStyles>
-        <h2 className='side-sub'>Book more meetings, build more trust, and close <span>more sales</span> using PAPU</h2>
+        <h2 className='side-sub'>Book more meetings, build more trust, and close <span>more sales</span> using PAPPU</h2>
         <Button />
     </ContainerStyles>
    <video className='video' src={Move} autoPlay loop muted playsInline preload='auto'></video>
