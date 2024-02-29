@@ -23,10 +23,10 @@ export const SectionSyles = styled.section`
     display: flex;
     width: 100%;
    border-radius: 48px;
-    background-color:#FEF2FF ;
+    background-color:#FEF2FF;
     padding:0 100px;
 
-    @media (max-width: 768px) {
+    @media (max-width: 976px) {
         flex-direction: column;
         padding: 100px 100px 0 100px;
         gap: 25px;

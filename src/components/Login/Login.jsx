@@ -16,7 +16,7 @@ function Login() {
   const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
           
   const validationSchema = Yup.object({
-    email: Yup.string().email('Invalid email').matches(emailRegexp, 'Invalid email').required(),
+    email: Yup.string().email('Invalid email').matches(emailRegexp, 'Please enter a valid email').required(),
     password: Yup.string().matches(passRegexp, 'Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters').required(),
   })
   
@@ -54,7 +54,7 @@ function Login() {
                       placeholder='Email'
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      isError={errors.email && touched.email} //chequear el touched
+                      isError={errors.email && touched.email ? errors.email : null} //chequear el touched
                       />
                    <Input 
                       type="password"
@@ -62,8 +62,8 @@ function Login() {
                       placeholder='Password'
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      isError={errors.password} //sin el touched "funciona"
-                      />
+                      isError={errors.password && touched.password ? errors.password : null} //sin el touched "funciona"
+                      /> 
                   <LoginBtn onSubmit={handleSubmit} type='submit'>jujjj</LoginBtn>
                </FormContainer>
               <Linkers><Link to={'/'}>Forgot Password?</Link><span>or</span><Link to={'/register'}>Register</Link></Linkers>    

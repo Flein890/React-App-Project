@@ -1,32 +1,33 @@
 import React from 'react'
 import { HeaderStyles, HeaderContainer } from './HeaderStyles'
 import logo from '../../images/logo.svg'
-import LoginBtn from '../UI/LoginBtn'
 import { Link , Outlet } from 'react-router-dom'
-import Button from '../UI/Button'
-import { BussinessName } from './HeaderStyles'
-import { LogoContainer, ToLogin } from './HeaderStyles'
+import {useSelector} from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { close, open } from '../../redux/NavbarSlice'
+import { LogoContainer, ToLogin,Line,BussinessName  } from './HeaderStyles'
 function Header() {
+    const isNavbarOpen = useSelector((state) => state.isOpen);
+    const dispatch = useDispatch()
+
   return (
     <>
     <HeaderContainer>
-      <HeaderStyles>
+      <HeaderStyles  className={isNavbarOpen ? 'navInvert' : ''}>
         <LogoContainer>
           <img src={logo} alt="" className='logo' />
-          <BussinessName>Papu</BussinessName>
-       </LogoContainer>
-       
+          <BussinessName>Pappu</BussinessName>
+       </LogoContainer>    
         <nav className='nav'>
-            <ul className='ul'>
-                <li><Link className='link active' to="/">Home</Link></li>
-                <li><Link className='link' to="about">About</Link></li>
-                <li><Link className='link' to="contact">Contact</Link></li>
-                <li><Link className='link' to="products">Products</Link></li>
+            <ul className={`ul ${isNavbarOpen ? 'open' : ''}`}>
+                <li onClick={() => dispatch(close())}><Link className='link' to="/">Home</Link></li>
+                <li onClick={() => dispatch(close())}><Link className='link' to="about">About</Link></li>
+                <li onClick={() => dispatch(close())}><Link className='link' to="contact">Contact</Link></li>
+                <li onClick={() => dispatch(close())}><Link className='link' to="products">Products</Link></li>
+                <Link onClick={() => dispatch(close())} to ='login'><ToLogin className={` ${isNavbarOpen ? 'login' : ''}`}>LOGIN</ToLogin></Link>
             </ul>
         </nav>
-        
-        <Link to ='login'><ToLogin>LOGIN</ToLogin></Link>
-        <a className='hamburger' href=""><span></span><span></span></a>
+        <button onClick={() => dispatch(isNavbarOpen ? close() : open())} className='hamburger' href=""><Line className={isNavbarOpen ? 'x' : ''}/><Line className={isNavbarOpen ? 'x2' : ''}/></button>
       </HeaderStyles>
     </HeaderContainer>
     
