@@ -1,5 +1,5 @@
 import React from 'react'
-import { InputForm } from './InputStyles'
+import { InputForm,ErrorMessage } from './InputStyles'
 
 function Input ({ type,name,isError,...field }) {
     return (
@@ -11,7 +11,7 @@ function Input ({ type,name,isError,...field }) {
         {...field}
         />
   
-        {isError && <span>{isError}</span>}
+        {isError && <ErrorMessage>{isError}</ErrorMessage>}
       </div>
     );
   };

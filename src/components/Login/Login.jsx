@@ -73,7 +73,7 @@ function Login() {
 
          <RightSide>
             <VideoWrapper>
-              <video src={video}></video>
+              <video autoPlay loop muted playsInline src={video}></video>
             </VideoWrapper>
             <Features>
             <span><i className="fa-regular fa-circle-check"></i>Book more meetings</span>

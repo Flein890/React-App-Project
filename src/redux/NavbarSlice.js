@@ -8,20 +8,15 @@ export const navbarSlice = createSlice({
     name: 'navbar',
     initialState: initialState,
     reducers: {
-        open: (state) => {
+        toggleNavbar: (state) => {
             console.log(state.isOpen)
-            return {...state, isOpen: true};
+            return {...state, isOpen: !state.isOpen};
         },
-        close: (state) => {
-            console.log(state.isOpen)
-            return {...state, isOpen: false};
-        }
     }
 });
 
 export const {
-    open,
-    close
+    toggleNavbar
 } = navbarSlice.actions;
 
 export default navbarSlice.reducer

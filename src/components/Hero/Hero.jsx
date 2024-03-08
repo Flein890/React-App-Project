@@ -53,7 +53,7 @@ useEffect(() => {
     <h1 className='title'>Personalized videos at scale</h1>
     <p className='subtitle'>Simplify video prospecting and boost response rates by up to 500% with impactful sales videos</p>
     <Button className='btn-hero'/>
-    <DownArrow><img src="https://img.icons8.com/ios/50/000000/down.png" alt="down arrow" /></DownArrow>
+    <a href="#section"><DownArrow><img src="https://img.icons8.com/ios/50/000000/down.png" alt="down arrow" /></DownArrow></a>
    </HeroStyles>
     
   </>

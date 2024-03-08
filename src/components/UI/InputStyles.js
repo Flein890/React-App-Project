@@ -13,3 +13,5 @@ background-color: #fff;
     border:1px solid black;
 }
 `
+export const ErrorMessage  = styled.span`
+    color: #f20;`

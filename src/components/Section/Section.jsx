@@ -27,7 +27,7 @@ function Section() {
  
 
   return (<SectionSyles>
-    <ContainerStyles>
+    <ContainerStyles  id='section' >
         <h2 className='side-sub'>Book more meetings, build more trust, and close <span>more sales</span> using PAPPU</h2>
         <Button />
     </ContainerStyles>

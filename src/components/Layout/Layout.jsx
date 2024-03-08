@@ -5,6 +5,7 @@ import Footer from "../Footer/Footer"
 import Featured from "../Featured/Featured"
 import ScrollReveal from "scrollreveal"
 
+
 function Layout() {
 
   return (<>

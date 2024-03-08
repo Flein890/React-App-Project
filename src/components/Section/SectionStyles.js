@@ -6,6 +6,10 @@ export const ContainerStyles = styled.div`
     align-items: start;
     justify-content: center;
     gap:40px;
+    scroll-padding-top:330px;
+    #section{
+        scroll-padding-top:330px;
+    }
     
     h2{
         font-size: 2.5em;
@@ -25,6 +29,7 @@ export const SectionSyles = styled.section`
    border-radius: 48px;
     background-color:#FEF2FF;
     padding:0 100px;
+ 
 
     @media (max-width: 976px) {
         flex-direction: column;
