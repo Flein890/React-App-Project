@@ -11,16 +11,17 @@ import { useEffect } from 'react'
 function Header() {
 
     const isNavbarOpen = useSelector((state) => state.navbar.isOpen);
+    console.log(isNavbarOpen)
     const dispatch = useDispatch()
     
-    useEffect(()=>{
-      if(!isNavbarOpen){
-        dispatch(toggleNavbar( ));
-      }
-    },[dispatch])
+    // useEffect(()=>{
+    //   if(!isNavbarOpen){
+    //     dispatch(toggleNavbar( ));
+    //   }
+    // },[dispatch])
 
   return (
-    <>
+
     <HeaderContainer>
       <HeaderStyles  className={isNavbarOpen ? 'navInvert' : ''}>
         <LogoContainer>
@@ -40,8 +41,6 @@ function Header() {
       </HeaderStyles>
     </HeaderContainer>
     
-       
-    </>
   )
 }
 
