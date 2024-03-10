@@ -5,10 +5,12 @@ import { combineReducers } from "@reduxjs/toolkit";
 import persistReducer from "redux-persist/es/persistReducer";
 import persistStore from "redux-persist/es/persistStore";
 import storage from "redux-persist/lib/storage";
+import categoriesReducer from "../redux/categoriesSlice"
 
 const reducers = combineReducers({
     navbar: navbarReducer,
-    cart: cartReducer
+    cart: cartReducer,
+    categories: categoriesReducer  
 });
 
 const persistConfig = {

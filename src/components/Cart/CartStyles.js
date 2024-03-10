@@ -56,9 +56,7 @@ const CartStyles = styled.div`
     `
     export const Price = styled.span`
     font-size: 13px;
-    font-weight: 600;
-    /* width: 33% ; */
-    `
+    font-weight: 600;    `
 export const TotalContainer = styled.div`
     display: flex;
     gap: 20px;
@@ -75,6 +73,11 @@ align-self: center;
 cursor: pointer;`
 
 export const Quantity = styled.span`
-user-select: none;`
+user-select: none;
+font-size: 20px;
+font-weight: 600;
+width: 40px;
+text-align:center
+`
 
     export default CartStyles

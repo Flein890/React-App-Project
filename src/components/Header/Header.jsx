@@ -11,7 +11,7 @@ import { useEffect } from 'react'
 function Header() {
 
     const isNavbarOpen = useSelector((state) => state.navbar.isOpen);
-    console.log(isNavbarOpen)
+    // console.log(isNavbarOpen)
     const dispatch = useDispatch()
     
     // useEffect(()=>{

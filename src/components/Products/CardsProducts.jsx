@@ -4,7 +4,9 @@ import products from '../../assets/video/products.mp4'
 import CardProduct from './CardProduct.jsx'
 import { useEffect } from 'react'
 import ScrollReveal from 'scrollreveal'
+import Categories from '../Categorias/Categories.jsx'
 import ShowMoreBtn from '../UI/ShowMoreBtn.jsx'
+import { useSelector,useDispatch } from 'react-redux'
 import { CardsProductsStyles,CardsWrapperHeading,CardsWrapper } from './CardsProductsStyles.js'
 
 function CardsProducts() {
@@ -25,14 +27,21 @@ function CardsProducts() {
       opacity:0,
     })
   })
+
+  //I bring the selected category from the store to filter the products
+  const selectedCategory = useSelector(state => state.categories.selectedCategory);
+  console.log(selectedCategory)
+
   return (
+
     <CardsProductsStyles>
       <CardsWrapperHeading>
          <h2>Choose an editor</h2>
          <video src={products} autoPlay muted loop playsInline preload='auto'></video>
       </CardsWrapperHeading>
+      <Categories/>
       <CardsWrapper>
-         {data.map((item)=>(
+         {data.filter((item)=> selectedCategory ? item.category === selectedCategory : true).map((item)=>(
            <CardProduct key={item.id} {...item}/>
          ))}
       </CardsWrapper>

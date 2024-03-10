@@ -4,7 +4,7 @@ export const data = JSON.parse(`[
         "name": "Source Filmmaker",
         "price": 19.99,
         "description": "Source Filmmaker is a tool used to create and capture videos that works on the Source engine.",
-        "category":"personalUse",
+        "category":"personal",
         "image": "https://cdn2.steamgriddb.com/icon/64b3ec1fdfacead70c3a9bd77d824306/32/512x512.png",
         "slogan": "pe"
     },
@@ -21,7 +21,7 @@ export const data = JSON.parse(`[
         "name": "Filmora 9",
         "price": 15.99,
         "description": "Wondershare Filmora is a trendy video editing software that empowers you to produce creative and polished videos in just a few simple steps.",
-        "category":"personalUse",
+        "category":"personal",
         "image":"https://software.uniandes.edu.co/wp-content/uploads/2021/03/Logo-filmora-FINAL.png"
     },
     {

@@ -1,8 +1,18 @@
 import React from 'react'
+import { useDispatch,useSelector } from 'react-redux'
+import { selectCategory } from '../../redux/categoriesSlice'
+import { CategorieToSelect } from './CategoriesStyles';
 
-function Categorie() {
+function Categorie({title,category}) {
+  const {selectedCategory} = useSelector(state => state.categories);
+  console.log(selectedCategory)
+  const dispatch = useDispatch();
   return (
-    <div>Categorie</div>
+    <CategorieToSelect 
+     selected={category === selectedCategory}
+     onClick={() => dispatch(selectCategory(category))}>
+       <h2>{title}</h2>
+    </CategorieToSelect>
   )
 }
 
