@@ -17,21 +17,30 @@ export const addItemToCart =(cartItems, product) => {
 export const removeItemFromCart = (cartItems,id) => {
 
     const productToRemove= cartItems.find(item => item.id === id.id )
-//     console.log(productToRemove)
-//     console.log(cartItems)
- // If the item is found and its quantity is greater than 1, it will be removed
-    // from the cartItems array by returning a new array without the item
-    // with its quantity decreased by 1.
-    // If the item is found and its quantity is 1, it will be removed from the
-    // cartItems array by returning a new array without the item
-    if(productToRemove.quantity>1) {
+
+    let toRemove = null;
+
+    if(productToRemove.quantity === 1){
+      toRemove = window.confirm('remove?')
+    }
+    // console.log(toRemove)
+
+    if(productToRemove.quantity>1 )
+    return cartItems.map(item =>
+        item.id ===productToRemove.id
+        ?   {...item, quantity: item.quantity-1} 
+        : item
+        );
+
+    if(!toRemove){
         return cartItems.map(item =>
             item.id ===productToRemove.id
-            ? {...item, quantity: item.quantity-1}
+            ?   {...item, quantity: item.quantity=1} 
             : item
             );
     }
-
+   
+   
     return cartItems.filter(item=> item.id !==productToRemove.id)
 };
 
