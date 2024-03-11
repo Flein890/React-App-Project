@@ -6,17 +6,19 @@ import persistReducer from "redux-persist/es/persistReducer";
 import persistStore from "redux-persist/es/persistStore";
 import storage from "redux-persist/lib/storage";
 import categoriesReducer from "../redux/categoriesSlice"
+import modalReducer from '../redux/modalSlice'
 
 const reducers = combineReducers({
     navbar: navbarReducer,
     cart: cartReducer,
-    categories: categoriesReducer  
+    categories: categoriesReducer ,
+    modal:modalReducer
 });
 
 const persistConfig = {
     key: 'root',
     storage,
-    whitelist: [''], //agregar cart despues para persistir los datos
+    whitelist: ['cart'], //agregar cart despues para persistir los datos
     
 }
 

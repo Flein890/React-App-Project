@@ -9,7 +9,7 @@ const CartStyles = styled.div`
     height: calc(100vh - 200px);
     background-color:#FFE3D3;
     /* color: white; */
-    z-index: 100;
+    z-index: 1000;
     border-radius:36px ;
     display: flex;
     flex-direction: column;

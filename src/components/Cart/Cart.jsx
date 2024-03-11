@@ -9,14 +9,24 @@ import { useDispatch,useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { roundToTwoDecimal } from '../../redux/cart-code.js'
 import { TotalContainer,Total } from './CartStyles'
+import Modal from '../UI/Modal.jsx'
+import { toggleModal } from '../../redux/modalSlice'
 
 function Cart() {
   const dispatch = useDispatch()
   
+const modalOpen = useSelector((state) => state.modal.modalOpen);
+
   const isCartOpen = useSelector((state) => state.cart.isCartOpen);
 
   const cartItems = useSelector ((state)=> state.cart.cartItems)
 
+
+  useEffect(() => {
+    if(modalOpen){
+      dispatch(toggleModal())
+    }
+  },[dispatch])
 //  console.log(useSelector((state)=> state.cart))
 
   useEffect(() => {
@@ -28,6 +38,9 @@ function Cart() {
   const totalPrice = cartItems.reduce((acc,item)=>{
     return (acc+=item.price * item.quantity)
   },0)
+
+
+
 
   return (
     <>
@@ -51,6 +64,12 @@ function Cart() {
     </CartStyles>
     </>
     }
+    {modalOpen &&  <>
+      <Modal>
+      <h2>Purchase this product/s?</h2>
+      <p>You are going to buy selected products</p>
+      <button onClick={() => dispatch(clearCart()) && dispatch(toggleModal())}>Buy</button>
+    </Modal></>}  
    
     </>
   )

@@ -15,7 +15,7 @@ import styled from 'styled-components';
     right: 50px;
     position: fixed;
     cursor: pointer;    
-    z-index: 1000;
+    z-index: 1200;
     
     `
 
