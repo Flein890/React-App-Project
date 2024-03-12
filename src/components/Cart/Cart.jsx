@@ -11,6 +11,8 @@ import { roundToTwoDecimal } from '../../redux/cart-code.js'
 import { TotalContainer,Total } from './CartStyles'
 import Modal from '../UI/Modal.jsx'
 import { toggleModal } from '../../redux/modalSlice'
+import { BsBrightnessAltHigh } from "react-icons/bs";
+import { Anything } from './CartStyles'
 
 function Cart() {
   const dispatch = useDispatch()
@@ -54,7 +56,7 @@ const modalOpen = useSelector((state) => state.modal.modalOpen);
                     <CartItem key={item.id} {...item} />
                   ))
                 ) : (
-                  <p>NO HAY PLATA</p>
+                  <Anything>This place is empty, try buying something... <BsBrightnessAltHigh /></Anything>
                 )}
         </CartContainer>    
         <TotalContainer>
@@ -67,7 +69,7 @@ const modalOpen = useSelector((state) => state.modal.modalOpen);
     {modalOpen &&  <>
       <Modal>
       <h2>Purchase this product/s?</h2>
-      <p>You are going to buy selected products</p>
+      <p>You are going to buy the selected products</p>
       <button onClick={() => dispatch(clearCart()) && dispatch(toggleModal())}>Buy</button>
     </Modal></>}  
    

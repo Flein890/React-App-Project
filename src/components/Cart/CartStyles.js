@@ -23,6 +23,8 @@ const CartStyles = styled.div`
    export const CartTittle = styled.h3`
     font-size: 24px;
     font-weight: 600;
+    border-bottom: 1px solid #000;
+    padding:10px 0 20px 0;
     `
 
     export const CartContainer = styled.div`
@@ -78,6 +80,12 @@ font-size: 20px;
 font-weight: 600;
 width: 40px;
 text-align:center
+`
+export const Anything = styled.p`
+display: flex;
+justify-content: start;
+align-items: center;
+gap: 5px;
 `
 
     export default CartStyles

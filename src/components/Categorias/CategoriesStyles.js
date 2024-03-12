@@ -11,8 +11,10 @@ padding:10px;
 border: 3px solid #000;
 border-radius: 48px;
 font-size: .8em;
+transition: all .2s ease;
 
-background-color: ${({ selected }) => selected ? '#666' : 'transparent'};
+background-color: ${({ selected }) => selected ? '#8330C4' : 'transparent'};
+color: ${({selected}) => selected ? '#fff' : '#000'};
   cursor: pointer;
 
 `
