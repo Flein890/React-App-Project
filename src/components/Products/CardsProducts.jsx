@@ -8,6 +8,7 @@ import Categories from '../Categorias/Categories.jsx'
 import ShowMoreBtn from '../UI/ShowMoreBtn.jsx'
 import { useSelector,useDispatch } from 'react-redux'
 import { CardsProductsStyles,CardsWrapperHeading,CardsWrapper } from './CardsProductsStyles.js'
+import AddModal from '../UI/AddModal.jsx'
 
 function CardsProducts() {
 
@@ -30,7 +31,8 @@ function CardsProducts() {
 
   //I bring the selected category from the store to filter the products
   const selectedCategory = useSelector(state => state.categories.selectedCategory);
-  console.log(selectedCategory)
+  // console.log(selsectedCategory)
+
 
   return (
 
@@ -46,6 +48,7 @@ function CardsProducts() {
          ))}
       </CardsWrapper>
       <ShowMoreBtn value='SHOW MORE'></ShowMoreBtn>
+      <AddModal />
     </CardsProductsStyles>
   )
 }

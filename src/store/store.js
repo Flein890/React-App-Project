@@ -7,12 +7,14 @@ import persistStore from "redux-persist/es/persistStore";
 import storage from "redux-persist/lib/storage";
 import categoriesReducer from "../redux/categoriesSlice"
 import modalReducer from '../redux/modalSlice'
+import addReducer from '../redux/addSlice'
 
 const reducers = combineReducers({
     navbar: navbarReducer,
     cart: cartReducer,
     categories: categoriesReducer ,
-    modal:modalReducer
+    modal:modalReducer,
+    add: addReducer
 });
 
 const persistConfig = {

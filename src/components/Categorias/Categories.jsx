@@ -6,7 +6,7 @@ import {CategoriesContainer} from './CategoriesStyles'
 function Categories() {
 
 const {categories} = useSelector(state => state.categories)
-console.log(categories)
+// console.log(categories)
 
   return (
     <CategoriesContainer>

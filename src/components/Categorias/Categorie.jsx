@@ -5,7 +5,7 @@ import { CategorieToSelect } from './CategoriesStyles';
 
 function Categorie({title,category}) {
   const {selectedCategory} = useSelector(state => state.categories);
-  console.log(selectedCategory)
+  // console.log(selectedCategory)
   const dispatch = useDispatch();
   return (
     <CategorieToSelect 

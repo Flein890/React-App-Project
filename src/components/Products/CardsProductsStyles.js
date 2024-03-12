@@ -90,6 +90,7 @@ export const CardsWrapperHeading = styled.div`
     justify-content: space-between;
     align-items: center;
     /* flex-direction: column; */
+    font-family: 'Montserrat';
     
     button{
         background-color: #8330C4;
@@ -98,10 +99,14 @@ export const CardsWrapperHeading = styled.div`
         color: #fff;
         padding: 10px 30px;
         border-radius: 78px ;
+        font-family: 'Montserrat';
+        transition: all .2s;
         
         /* width: 100%; */
     }
     button:hover{
-        filter: contrast(100);
+        color: #000;
+        background-color: #fff;
+        outline: 1px solid #000;
     }
     `
