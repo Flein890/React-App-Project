@@ -9,11 +9,11 @@ export const addSlice = createSlice({
     initialState:initialState,
     reducers:{
         open: (state) =>{
-            console.log(state.translate)
+            // console.log(state.translate)
             return {...state, translate: true }  
         },
         close: (state) =>{
-            console.log(state.translate)
+            // console.log(state.translate)
             return {...state, translate: false }
         }
     }

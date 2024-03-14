@@ -13,9 +13,13 @@ import Modal from '../UI/Modal.jsx'
 import { toggleModal } from '../../redux/modalSlice'
 import { BsBrightnessAltHigh } from "react-icons/bs";
 import { Anything } from './CartStyles'
+import {toggleProductModal} from '../../redux/productModal.js'
+import { trueProductModal,falseProductModal } from '../../redux/cartMenuSlice.js'
 
 function Cart() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+
+  const productModal = useSelector((state)=> state.productModal.removeModal)
   
 const modalOpen = useSelector((state) => state.modal.modalOpen);
 
@@ -23,6 +27,7 @@ const modalOpen = useSelector((state) => state.modal.modalOpen);
 
   const cartItems = useSelector ((state)=> state.cart.cartItems)
 
+  
 
   useEffect(() => {
     if(modalOpen){
@@ -40,6 +45,7 @@ const modalOpen = useSelector((state) => state.modal.modalOpen);
   const totalPrice = cartItems.reduce((acc,item)=>{
     return (acc+=item.price * item.quantity)
   },0)
+
 
 
 
@@ -72,7 +78,16 @@ const modalOpen = useSelector((state) => state.modal.modalOpen);
       <p>You are going to buy the selected products</p>
       <button onClick={() => dispatch(clearCart()) && dispatch(toggleModal())}>Buy</button>
     </Modal></>}  
-   
+    {productModal &&  <>
+      <Modal>
+      <h2>Remove item from cart?</h2>
+      <p>You are going to remove the selected product</p>
+      <div>
+        <button onClick={() => dispatch(falseProductModal()) && dispatch(toggleProductModal())}>Cancel</button>
+        <button className='delete' onClick={() => dispatch(trueProductModal()) && dispatch(toggleProductModal())}>Delete</button>   {/**Debe mandar true para borrar */}
+      </div>   
+    </Modal></>}  
+
     </>
   )
 }

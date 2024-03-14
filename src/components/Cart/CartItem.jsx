@@ -6,6 +6,7 @@ import {IoMdTrash} from 'react-icons/io'
 import { useDispatch } from 'react-redux'
 import { HandlerAmount,Quantity } from './CartStyles';
 import { addToCart,removeFromCart } from '../../redux/cartMenuSlice'
+import { toggleProductModal } from '../../redux/productModal';
 
 function CartItem({price,name,id,image,quantity}) {
   const dispatch = useDispatch()
@@ -16,9 +17,8 @@ function CartItem({price,name,id,image,quantity}) {
            {/* <Tittle>{name}</Tittle> */}
       </CartInfoContainer>
            <Price>Price: ${price}</Price>
-         
       <CartInfoContainer>
-         <HandlerAmount onClick={() => dispatch(removeFromCart({id}))}>{quantity===1 ? <IoMdTrash/> : <FaMinus/>}</HandlerAmount>
+         <HandlerAmount onClick={() => dispatch(removeFromCart({id}))}>{quantity===1 ? <IoMdTrash onClick={() => dispatch(toggleProductModal())}/> : <FaMinus/>}</HandlerAmount>
          <Quantity>{quantity}</Quantity>
          <HandlerAmount onClick={() => dispatch(addToCart({id,name,price,image}))}><FaPlus/></HandlerAmount>
       </CartInfoContainer>

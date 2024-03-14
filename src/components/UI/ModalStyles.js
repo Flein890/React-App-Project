@@ -22,6 +22,10 @@ background-color: #fff;
 box-shadow: rgba(100,100,111,0.2) 0 7px 29px 0;
 z-index: 2000;
 padding: 20px;
+div{
+    display: flex;
+    gap: 10px;
+    }
 `
 export const HeaderModal= styled.div`
 display: flex;
@@ -70,6 +74,10 @@ button{
     width: 100%;
     border: none;
     cursor: pointer;
+    font-family: 'Montserrat',system-ui ;
 
+}
+p{
+    padding-bottom: 10px;
 }
 `

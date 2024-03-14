@@ -16,7 +16,7 @@ useEffect(() => {
   setTimeout(() => {
     dispatch(close())
   },1000)
-  console.log(addState)
+  // console.log(addState)
 },[addState])
 
 
