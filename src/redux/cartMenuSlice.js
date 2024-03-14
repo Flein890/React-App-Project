@@ -16,7 +16,8 @@ const cartMenuSlice = createSlice({
     initialState: initialState,
     reducers: {
         trueProductModal: (state)=>{
-            return {...state ,remove:true}
+             console.log(state.remove)
+            return {...state ,remove: true}
         },
         falseProductModal: (state)=>{
             return {...state ,remove:false}

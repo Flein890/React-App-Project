@@ -4,7 +4,7 @@ import { CartContainer } from './CartStyles'
 import CartItem from './CartItem'
 import CheckoutBtn from '../UI/CheckoutBtn'
 import { CartTittle } from './CartStyles'
-import { toggleHiddenCart,clearCart } from '../../redux/cartMenuSlice.js'
+import { toggleHiddenCart,clearCart, removeFromCart } from '../../redux/cartMenuSlice.js'
 import { useDispatch,useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { roundToTwoDecimal } from '../../redux/cart-code.js'
@@ -15,19 +15,19 @@ import { BsBrightnessAltHigh } from "react-icons/bs";
 import { Anything } from './CartStyles'
 import {toggleProductModal} from '../../redux/productModal.js'
 import { trueProductModal,falseProductModal } from '../../redux/cartMenuSlice.js'
+import { Overlay } from './CartStyles'
 
 function Cart() {
   const dispatch = useDispatch();
 
   const productModal = useSelector((state)=> state.productModal.removeModal)
   
-const modalOpen = useSelector((state) => state.modal.modalOpen);
+  const modalOpen = useSelector((state) => state.modal.modalOpen);
 
   const isCartOpen = useSelector((state) => state.cart.isCartOpen);
 
-  const cartItems = useSelector ((state)=> state.cart.cartItems)
+  const cartItems = useSelector ((state)=> state.cart.cartItems);
 
-  
 
   useEffect(() => {
     if(modalOpen){
@@ -46,14 +46,10 @@ const modalOpen = useSelector((state) => state.modal.modalOpen);
     return (acc+=item.price * item.quantity)
   },0)
 
-
-
-
-
   return (
     <>
     {isCartOpen && <>
-
+        <Overlay onClick={() => dispatch(toggleHiddenCart())} />
        <CartStyles className={isCartOpen ? 'open' : ''}>
         <CartTittle>Cart</CartTittle>
         <CartContainer>
@@ -79,14 +75,14 @@ const modalOpen = useSelector((state) => state.modal.modalOpen);
       <button onClick={() => dispatch(clearCart()) && dispatch(toggleModal())}>Buy</button>
     </Modal></>}  
     {productModal &&  <>
-      <Modal>
-      <h2>Remove item from cart?</h2>
-      <p>You are going to remove the selected product</p>
-      <div>
-        <button onClick={() => dispatch(falseProductModal()) && dispatch(toggleProductModal())}>Cancel</button>
-        <button className='delete' onClick={() => dispatch(trueProductModal()) && dispatch(toggleProductModal())}>Delete</button>   {/**Debe mandar true para borrar */}
-      </div>   
-    </Modal></>}  
+  <Modal>
+  <h2>Remove item from cart?</h2>
+  <p>You are going to remove the selected product</p>
+  <div>
+    <button onClick={() => dispatch(falseProductModal()) && dispatch(toggleProductModal())}>Cancel</button>
+    <button className='delete' onClick={() => dispatch(trueProductModal()) && dispatch(toggleProductModal())}>Delete</button>   {/**Debe mandar true para borrar */}
+  </div>   
+</Modal></>} 
 
     </>
   )

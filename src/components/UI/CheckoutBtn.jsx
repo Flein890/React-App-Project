@@ -3,11 +3,11 @@ import { CheckoutBtnStyles } from './CheckoutBtnStyles'
 import { toggleModal } from '../../redux/modalSlice'
 import { useDispatch,useSelector } from 'react-redux'
 
-function CheckoutBtn({value}) {
+function CheckoutBtn({value,disabled}) {
   const dispatch = useDispatch();
   const cartItems = useSelector ((state)=> state.cart.cartItems)
   return (
-    <CheckoutBtnStyles onClick={cartItems.length ? ()=>dispatch(toggleModal()) : console.log('no hay nada')}>{value}</CheckoutBtnStyles>
+    <CheckoutBtnStyles style = {{cursor: disabled ? 'not-allowed' : 'pointer', backgroundColor: disabled ? '#666' : '#8330C4'}}  onClick={cartItems.length ? ()=>dispatch(toggleModal()) : console.log('no hay nada')}>{value}</CheckoutBtnStyles>
   )
 }
 

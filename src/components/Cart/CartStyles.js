@@ -7,7 +7,8 @@ const CartStyles = styled.div`
     width: 450px;
     right: 50px;
     height: calc(100vh - 200px);
-    background-color:#FFE3D3;
+    /* background-color:#FFE3D3; */
+    background-color: #fff;
     /* color: white; */
     z-index: 1000;
     border-radius:36px ;
@@ -38,12 +39,13 @@ const CartStyles = styled.div`
     export const CartItemStyles = styled.div`
     display: flex;
     /* color: white; */
-    background-color: #fff;
+    /* background-color: #fff; */
     padding:20px;
     border-radius: 30px;
     gap: 20px;
     justify-content: space-between;
     align-items: center;
+    background-color:#FFE3D3;
     `
     export const CartInfoContainer = styled.div`
     display: flex;
@@ -86,6 +88,19 @@ display: flex;
 justify-content: start;
 align-items: center;
 gap: 5px;
+`
+
+export const Overlay = styled.div`
+width: 100vw;
+height:100vh;
+position: fixed;
+top: 0;
+left: 0;
+background-color: rgba(0,0,0,.5);
+z-index: 1000;
+display: flex;
+align-items: center;
+justify-content: center;
 `
 
     export default CartStyles

@@ -7,10 +7,17 @@ import { useDispatch } from 'react-redux'
 import { HandlerAmount,Quantity } from './CartStyles';
 import { addToCart,removeFromCart } from '../../redux/cartMenuSlice'
 import { toggleProductModal } from '../../redux/productModal';
+import { useSelector } from 'react-redux';
+
+
 
 function CartItem({price,name,id,image,quantity}) {
   const dispatch = useDispatch()
-  return (
+  const productModal = useSelector((state)=> state.productModal.removeModal)
+
+ 
+
+  return (<>
 <CartItemStyles> 
       <CartInfoContainer>
            <img style={{width:'50px'}} src={image} alt={name} />
@@ -18,11 +25,13 @@ function CartItem({price,name,id,image,quantity}) {
       </CartInfoContainer>
            <Price>Price: ${price}</Price>
       <CartInfoContainer>
-         <HandlerAmount onClick={() => dispatch(removeFromCart({id}))}>{quantity===1 ? <IoMdTrash onClick={() => dispatch(toggleProductModal())}/> : <FaMinus/>}</HandlerAmount>
+         <HandlerAmount>{quantity===1 ? <IoMdTrash onClick={() => dispatch(removeFromCart({id})) && dispatch(toggleProductModal()) }/> : <FaMinus onClick={() => dispatch(removeFromCart({id}))}/>}</HandlerAmount>
          <Quantity>{quantity}</Quantity>
          <HandlerAmount onClick={() => dispatch(addToCart({id,name,price,image}))}><FaPlus/></HandlerAmount>
       </CartInfoContainer>
 </CartItemStyles>
+
+ </>
 
    
   )
