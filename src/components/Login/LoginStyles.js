@@ -16,6 +16,12 @@ export const LeftSide = styled.div`
     justify-content: space-between;
     height: 100vh;
     width: 50vw;
+    @media (max-width: 768px){
+         justify-content:center ;
+       
+         height: 100vh;
+         width: 100vw;  
+        }
     `
  export const LoginContainer = styled.div`
         display: flex;
@@ -56,10 +62,16 @@ display: flex;
     justify-content: space-between;
     width: 100%;
 `
-export const FooterStyles = styled.footer`
+export const FooterStyles = styled.div`
 color:#999;
 font-size: 14px;
-align-self: start;`
+align-self: start;
+@media (max-width: 768px){
+    position: absolute;
+    bottom:35px;
+    left:35px;
+}
+`
 
 export const HeadingSection = styled.div`
 display:flex;
@@ -67,7 +79,9 @@ align-items: center;
 gap: 10px;
 height: 50px;
 align-self: start;
-
+@media (max-width: 768px){
+    display: none;
+}
 
 img{
     height: 40px;
@@ -94,6 +108,10 @@ export const RightSide = styled.div`
     width: 50vw;
     background-color: #9942DB;
     gap:40px;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 
     /* img{
         width: 100%;
