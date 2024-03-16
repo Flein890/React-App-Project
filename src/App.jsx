@@ -7,6 +7,7 @@ import CardsProducts from './components/Products/CardsProducts'
 import Login from './components/Login/Login'
 import Cart from './components/Cart/Cart'
 import CartIcon from './components/Cart/CartIcon'
+import ContactForm from './components/ContactForm/ContactForm'
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         <Route path='/' element={<Layout/>}/>
         <Route path='products' element={<CardsProducts/>}/>
         <Route path='login' element={<Login/>}/>
-        {/* <Route path='contact' element={<Contact/>}/> */}
+        <Route path='contact' element={<ContactForm/>}/>
         {/* <Route path='about' element={<About/>}/> */}
         <Route path='*' element={<NotFound/>}/>
       </Routes>

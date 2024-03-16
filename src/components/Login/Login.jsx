@@ -64,7 +64,7 @@ function Login() {
                       onBlur={formik.handleBlur}
                       isError={errors.password && touched.password ? errors.password : null} //sin el touched "funciona"
                       /> 
-                  <LoginBtn onSubmit={handleSubmit} type='submit'>jujjj</LoginBtn>
+                  <LoginBtn onSubmit={handleSubmit} value='Login' type='submit'>jujjj</LoginBtn>
                </FormContainer>
               <Linkers><Link to={'/'}>Forgot Password?</Link><span>or</span><Link to={'/register'}>Register</Link></Linkers>    
             </LoginContainer>

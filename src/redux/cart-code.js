@@ -41,13 +41,13 @@ export const removeItemFromCart = (cartItems,id,prodState) => {
             );
         }
    
-        console.log(prodState)
+      
     return cartItems.filter(item=> item.id !==productToRemove.id)
     
  
 };
 
-const removeQuantity = (cartItems,id) => {
+const trashCan = (cartItems,id) => {
     
 }
 

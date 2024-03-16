@@ -74,6 +74,7 @@ function Cart() {
       <p>You are going to buy the selected products</p>
       <button onClick={() => dispatch(clearCart()) && dispatch(toggleModal())}>Buy</button>
     </Modal></>}  
+    
     {productModal &&  <>
   <Modal>
   <h2>Remove item from cart?</h2>
