@@ -11,7 +11,7 @@ function Categorie({title,category}) {
     <CategorieToSelect 
      selected={category === selectedCategory}
      onClick={() => dispatch(selectCategory(category))}>
-       <h3>{title}</h3>
+       <span>{title}</span>
     </CategorieToSelect>
   )
 }

@@ -79,6 +79,7 @@ align-items: center;
 gap: 10px;
 height: 50px;
 align-self: start;
+font-family: 'Montserrat',system-ui ;
 @media (max-width: 768px){
     display: none;
 }

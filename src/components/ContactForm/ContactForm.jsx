@@ -6,7 +6,11 @@ import * as Yup from 'yup'
 import { useEffect } from 'react'
 import ScrollReveal from 'scrollreveal'
 import LoginBtn from '../UI/LoginBtn'
-import { FormikStyles, DatosStyled, ContactTitle, FormStyles,PurpleBackgroundBar} from './ContactFormStyles'
+import { FormikStyles, DatosStyled, ContactTitle, FormStyles,PurpleBackgroundBar,FormAndTitleContainer} from './ContactFormStyles'
+import { HeadingSection } from './ContactFormStyles'
+import logo from '../../images/logo.svg'
+import TextArea from '../UI/TextArea/TextArea'
+import { FooterStyles } from './ContactFormStyles'
 function ContactForm() {
   
   window.sr= ScrollReveal();
@@ -14,20 +18,21 @@ function ContactForm() {
     sr.reveal('input', {
       duration: 2000,
       origin: 'left',
-      distance: '100px',
+      distance: '50px',
       delay:500,
       
     })
-    sr.reveal('button', {
+    sr.reveal('textarea', { //the button of send does not recongnize this 'class'name
       duration: 2000,
       origin: 'left',
-      distance: '100px',
+      distance: '50px',
       delay:500
     })
-    sr.reveal('h3', {
+    sr.reveal('h4', {
       duration: 2000,
       origin: 'top',
-      distance: '100px'
+      distance: '50px',
+      opacity:0
     })
   })
 
@@ -57,9 +62,15 @@ const {errors, touched, handleSubmit} = formik
 
   return (
     <DatosStyled>
-      <ContactTitle> Contact Us!</ContactTitle>
+        <HeadingSection>
+              <img src={logo} alt="logo" />
+              <h3>Pappu</h3>
+           </HeadingSection>    
+
+           <FormAndTitleContainer>
+           <ContactTitle> Contact Us!</ContactTitle>
      
-       <FormikStyles
+     <FormikStyles
      initialValues={contactInitialValues}
      validationSchema={validationSchema}
      onSubmit={values => console.log(values)}>
@@ -68,12 +79,15 @@ const {errors, touched, handleSubmit} = formik
       <Input className='1'  type="text" name="name" placeholder="Name" errors={errors.name && touched.name ? errors.name : ''} />
       <Input className='2' type="email" name="email" placeholder="Email" />
       <Input className='3' type="number" name="cellphone" placeholder="Cellphone" />
-      <Input className='4'type="text" name="message" placeholder="Message" />
+      <TextArea className='4'type="text" name="message" placeholder="Message" />
       <LoginBtn className='5' onSubmit={handleSubmit} value='SEND'/>
       </FormStyles>
-      
     
-    </FormikStyles>
+  
+     </FormikStyles>
+           </FormAndTitleContainer>
+     
+    <FooterStyles>Copyright © Pappu. Made with love and magic by Franco</FooterStyles>
     <PurpleBackgroundBar></PurpleBackgroundBar>
     </DatosStyled>
    

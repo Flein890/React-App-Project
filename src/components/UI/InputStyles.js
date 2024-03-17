@@ -7,6 +7,7 @@ padding: 12px 13px;
 height: 40px;
 width: 100%;
 background-color: #fff;
+font-family: 'Montserrat';
 
 &:focus{
     outline: none;
