@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const NotFoundStyled = styled.div`
+export const NotFoundStyled = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -42,4 +42,4 @@ export const Resource = styled.span`
     color: #777;
     text-align: center;
 `
-export default NotFoundStyled
+// export default NotFoundStyled

@@ -15,7 +15,15 @@ import styled from 'styled-components';
     right: 50px;
     position: fixed;
     cursor: pointer;    
-    z-index: 1200;
+    z-index: 1000;
+
+    @media(max-width:976px){
+      width: 30px;
+      height: 30px;
+      background-color: transparent;
+      top: 15px;
+      right: 70px;
+    }
     
     `
 
@@ -34,6 +42,11 @@ import styled from 'styled-components';
     font-weight: bold;
     user-select: none;
     border-radius: 50%;
+    @media(max-width:976px){
+      width: 15px;
+      height: 15px;
+      font-size: 12px;
+    }
     `
 
     export default CartIconStyles

@@ -29,6 +29,8 @@ function Cart() {
   const cartItems = useSelector ((state)=> state.cart.cartItems);
 
 
+
+
   useEffect(() => {
     if(modalOpen){
       dispatch(toggleModal())

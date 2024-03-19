@@ -19,6 +19,12 @@ const CartStyles = styled.div`
     overflow-y: scroll;
     padding: 20px;
     font-family: 'Montserrat',system-ui ;
+    @media (max-width:576px){
+        width: 80%;
+        height: 80%;
+        right: 0;
+        margin: 20px;;
+    }
     `
     
    export const CartTittle = styled.h3`

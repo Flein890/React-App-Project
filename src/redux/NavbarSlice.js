@@ -9,7 +9,7 @@ export const navbarSlice = createSlice({
     initialState: initialState,
     reducers: {
         toggleNavbar: (state) => {
-            console.log(state.isOpen)
+            // console.log(state.isOpen)
             return {...state, isOpen: !state.isOpen};
         },
     }
