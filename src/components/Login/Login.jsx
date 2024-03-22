@@ -1,6 +1,6 @@
 import React from 'react'
 import LoginStyles from './LoginStyles'
-import {Link} from 'react-router-dom'
+import {Link,NavLink} from 'react-router-dom'
 import { LeftSide,LoginContainer,FormContainer,Linkers,FooterStyles,HeadingSection } from './LoginStyles'
 import { RightSide, VideoWrapper,Features } from './LoginStyles'
 import logo from '../../images/logo.svg'
@@ -9,7 +9,7 @@ import {useFormik} from 'formik'
 import * as Yup from 'yup'
 import LoginBtn from '../UI/LoginBtn'
 import Input from '../UI/Input'
-
+import {Outlet} from 'react-router-dom'
 function Login() {
 
   const passRegexp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/
@@ -39,7 +39,19 @@ function Login() {
   return (
     <>
       <LoginStyles>
+      <RightSide>
+            <VideoWrapper>
+              <video autoPlay loop muted playsInline src={video}></video>
+            </VideoWrapper>
+            <Features>
+            <span><i className="fa-regular fa-circle-check"></i>Book more meetings</span>
+            <span><i className="fa-regular fa-circle-check"></i>Build more trust and convert more sales</span>
+            <span><i className="fa-regular fa-circle-check"></i>Build stronger relationship using PAPU</span>
+            </Features>
+         </RightSide>
   
+         <Outlet></Outlet>
+
           <LeftSide>
            <HeadingSection>
               <img src={logo} alt="logo" />
@@ -64,23 +76,15 @@ function Login() {
                       onBlur={formik.handleBlur}
                       isError={errors.password && touched.password ? errors.password : null} //sin el touched "funciona"
                       /> 
-                  <LoginBtn onSubmit={handleSubmit} value='Login' type='submit'>jujjj</LoginBtn>
+                  <LoginBtn onSubmit={handleSubmit} value='Login' type='submit'></LoginBtn>
                </FormContainer>
-              <Linkers><Link to={'/'}>Forgot Password?</Link><span>or</span><Link to={'/register'}>Register</Link></Linkers>    
+              <Linkers><Link to={'/'}>Forgot Password?</Link><span>or</span><Link to={'/register'} >Register</Link></Linkers>    
             </LoginContainer>
             <FooterStyles>Copyright © Pappu. Made with love and magic by Franco </FooterStyles>  
            </LeftSide>
+     
 
-         <RightSide>
-            <VideoWrapper>
-              <video autoPlay loop muted playsInline src={video}></video>
-            </VideoWrapper>
-            <Features>
-            <span><i className="fa-regular fa-circle-check"></i>Book more meetings</span>
-            <span><i className="fa-regular fa-circle-check"></i>Build more trust and convert more sales</span>
-            <span><i className="fa-regular fa-circle-check"></i>Build stronger relationship using PAPU</span>
-            </Features>
-         </RightSide>
+        
       </LoginStyles>
     </>
   )

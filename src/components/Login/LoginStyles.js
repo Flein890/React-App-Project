@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 const LoginStyles = styled.div`
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
     justify-content:center;
     font-family: 'Montserrat',system-ui ;

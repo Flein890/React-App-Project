@@ -21,7 +21,7 @@ function Header() {
     // },[dispatch])
 
   return (
-
+<>
     <HeaderContainer>
       <HeaderStyles  className={isNavbarOpen ? 'navInvert' : ''}>
         <LogoContainer>
@@ -40,7 +40,8 @@ function Header() {
         <button onClick={() => dispatch(toggleNavbar())} className='hamburger'><Line className={isNavbarOpen ? 'x' : ''}/><Line className={isNavbarOpen ? 'x2' : ''}/></button>
       </HeaderStyles>
     </HeaderContainer>
-    
+    <Outlet />
+    </>
   )
 }
 

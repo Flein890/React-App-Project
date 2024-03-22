@@ -8,21 +8,25 @@ import Login from './components/Login/Login'
 import Cart from './components/Cart/Cart'
 import CartIcon from './components/Cart/CartIcon'
 import ContactForm from './components/ContactForm/ContactForm'
+import Register from './components/Register/Register'
 
 function App() {
   return (
     <BrowserRouter>
-     <Header/>
-<CartIcon />
+       <Header/>
+        <CartIcon />
      <Cart />
       <Routes>
         <Route path='/' element={<Layout/>}/>
         <Route path='products' element={<CardsProducts/>}/>
         <Route path='login' element={<Login/>}/>
+        <Route path='register' element={<Register/>}/>
         <Route path='contact' element={<ContactForm/>}/>
         {/* <Route path='about' element={<About/>}/> */}
         <Route path='*' element={<NotFound/>}/>
+
       </Routes>
+      
     </BrowserRouter>
   )
 }
