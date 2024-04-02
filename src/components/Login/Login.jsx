@@ -12,8 +12,8 @@ import Input from '../UI/Input'
 import {Outlet} from 'react-router-dom'
 function Login() {
 
-  const passRegexp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/
-  const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+const passRegexp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/
+const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
           
   const validationSchema = Yup.object({
     email: Yup.string().email('Invalid email').matches(emailRegexp, 'Please enter a valid email').required(),
@@ -28,7 +28,7 @@ function Login() {
     validationSchema
     ,
     onSubmit: (values,{resetForm}) => {
-      console.log('datos enviados')
+      // console.log('datos enviados')
       console.log(values)
       resetForm()
     }
@@ -66,7 +66,7 @@ function Login() {
                       placeholder='Email'
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      isError={errors.email && touched.email ? errors.email : null} //chequear el touched
+                      hasError={errors.email && touched.email ? errors.email : null} //chequear el touched
                       />
                    <Input 
                       type="password"
@@ -74,7 +74,7 @@ function Login() {
                       placeholder='Password'
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      isError={errors.password && touched.password ? errors.password : null} //sin el touched "funciona"
+                      hasError={errors.password && touched.password ? errors.password : null} //sin el touched "funciona"
                       /> 
                   <LoginBtn onSubmit={handleSubmit} value='Login' type='submit'></LoginBtn>
                </FormContainer>

@@ -1,17 +1,17 @@
 import React from 'react'
 import { TextAreaForm,ErrorMessage } from './TextAreaStyles';
 
-function TextArea ({ type,name,isError,...field }) {
+function TextArea ({ type,name,hasError,...field }) {
         return (
             <div>
                 <TextAreaForm 
                 type={type} 
                 name={name}
-                error={isError}
+                error={hasError}
                 {...field}
                 />
     
-                {isError && <ErrorMessage>{isError}</ErrorMessage>}
+                {hasError && <ErrorMessage>{hasError}</ErrorMessage>}
             </div>
         );
     };

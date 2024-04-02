@@ -11,6 +11,7 @@ import { HeadingSection } from './ContactFormStyles'
 import logo from '../../images/logo.svg'
 import TextArea from '../UI/TextArea/TextArea'
 import { FooterStyles } from './ContactFormStyles'
+
 function ContactForm() {
   
   window.sr= ScrollReveal();
@@ -47,13 +48,18 @@ function ContactForm() {
 const validationSchema = Yup.object({
   name: Yup.string().required('Required'),
   email: Yup.string().email('Invalid email').required('Required'),
-  cellphone: Yup.string().required('Required'),
+  cellphone: Yup.number().required('Required'),
   message: Yup.string().required('Required')
 })
 
 const formik = useFormik({
   initialValues: contactInitialValues,
-  validationSchema
+  validationSchema,
+  onSubmit: (values,{resetForm}) => {
+    console.log('datos enviados')
+    console.log(values)
+    resetForm()
+  }
 })
 
 const {errors, touched, handleSubmit} = formik
@@ -76,11 +82,35 @@ const {errors, touched, handleSubmit} = formik
      onSubmit={values => console.log(values)}>
 
       <FormStyles>
-      <Input className='1'  type="text" name="name" placeholder="Name" errors={errors.name && touched.name ? errors.name : ''} />
-      <Input className='2' type="email" name="email" placeholder="Email" />
-      <Input className='3' type="number" name="cellphone" placeholder="Cellphone" />
-      <TextArea className='4'type="text" name="message" placeholder="Message" />
-      <LoginBtn className='5' onSubmit={handleSubmit} value='SEND'/>
+      <Input
+        type="text"
+        name="name"
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        placeholder="Name" 
+        hasError={errors.name && touched.name ? errors.name : null} />
+      <Input
+        type="email"
+        name="email"
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        placeholder="Email"
+        hasError={errors.email && touched.email ? errors.email : null} />
+      <Input
+        type="number"
+        name="cellphone"
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        placeholder="Cellphone"
+        hasError={errors.cellphone && touched.cellphone ? errors.cellphone : null} />
+      <TextArea
+        type="textarea"
+        name="message"
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        placeholder="Tell us something...."
+        hasError={errors.message && touched.message ? errors.message : null} />
+      <LoginBtn type="submit" onSubmit={handleSubmit} value='Submit'/>
       </FormStyles>
     
   

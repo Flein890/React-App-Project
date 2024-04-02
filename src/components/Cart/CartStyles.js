@@ -51,7 +51,9 @@ const CartStyles = styled.div`
     gap: 20px;
     justify-content: space-between;
     align-items: center;
-    background-color:#FFE3D3;
+    /* background-color:#FFE3D3; */
+    border: 1px solid #000;
+    min-height: 90px;
     `
     export const CartInfoContainer = styled.div`
     display: flex;
