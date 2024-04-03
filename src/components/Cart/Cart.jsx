@@ -15,7 +15,7 @@ import { BsBrightnessAltHigh } from "react-icons/bs";
 import { Anything } from './CartStyles'
 import {toggleProductModal} from '../../redux/productModal.js'
 import { trueProductModal,falseProductModal } from '../../redux/cartMenuSlice.js'
-import { Overlay } from './CartStyles'
+import { Overlay,CloseCart } from './CartStyles'
 
 function Cart() {
   const dispatch = useDispatch();
@@ -53,7 +53,9 @@ function Cart() {
     {isCartOpen && <>
         <Overlay onClick={() => dispatch(toggleHiddenCart())} />
        <CartStyles className={isCartOpen ? 'open' : ''}>
+      <CloseCart><i className="fa-solid fa-xmark" onClick={() => dispatch(toggleHiddenCart())}></i></CloseCart>
         <CartTittle>Cart</CartTittle>
+      
         <CartContainer>
           {cartItems.length ? (
                   cartItems.map((item) => (
@@ -83,7 +85,7 @@ function Cart() {
   <p>You are going to remove the selected product</p>
   <div>
     <button onClick={() => dispatch(falseProductModal()) && dispatch(toggleProductModal())}>Cancel</button>
-    <button className='delete' onClick={() => dispatch(trueProductModal()) && dispatch(toggleProductModal())}>Delete</button>   {/**Debe mandar true para borrar */}
+    <button className='delete' onClick={() => dispatch(trueProductModal()) && dispatch(toggleProductModal())}>Delete</button>   {/**it must be true to delete*/}
   </div>   
 </Modal></>} 
 

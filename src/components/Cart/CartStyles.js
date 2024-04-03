@@ -20,13 +20,23 @@ const CartStyles = styled.div`
     padding: 20px;
     font-family: 'Montserrat',system-ui ;
     @media (max-width:576px){
-        width: 80%;
-        height: 80%;
+        width: 100%;
+        height: 100%;
         right: 0;
-        margin: 20px;;
+        top:0 ;
+        border-radius: 0;
     }
     `
     
+    export const CloseCart = styled.div`
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    cursor: pointer;
+    font-size: 20px;
+
+    `
+
    export const CartTittle = styled.h3`
     font-size: 24px;
     font-weight: 600;

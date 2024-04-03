@@ -62,7 +62,10 @@ z-index: 900;
 /* position: absolute;
     bottom:35px; */
 @media (max-width: 576px){
-   padding: 5px;
+   position: absolute;
+   bottom: 35px;
+   left: 35px;
+   width: 80%;
 }
 `
 

@@ -3,6 +3,7 @@ import { HeroStyles, DownArrow } from './HeroStyles.js'
 import Button from '../UI/Button.jsx'
 import ScrollReveal from 'scrollreveal'
 import { useEffect } from 'react'
+import {Link} from 'react-router-dom'
 
 function Hero() {
 
@@ -45,14 +46,15 @@ useEffect(() => {
   
 })
 
- 
-
   return (
   <>
    <HeroStyles>
     <h1 className='title'>Personalized videos at scale</h1>
     <p className='subtitle'>Simplify video prospecting and boost response rates by up to 500% with impactful sales videos</p>
-    <Button className='btn-hero'/>
+    
+    <Link to={'/login'}>
+      <Button  className='btn-hero'/>
+    </Link>   
     <a href="#section"><DownArrow><img src="https://img.icons8.com/ios/50/000000/down.png" alt="down arrow" /></DownArrow></a>
    </HeroStyles>
     

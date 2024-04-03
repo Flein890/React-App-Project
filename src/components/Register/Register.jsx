@@ -62,36 +62,40 @@ function Register () {
                 <Input
                       type="text"
                       name='username'
+                      value={formik.values.username}
                       placeholder='Username'
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      isError={errors.username && touched.username ? errors.username : null}
+                      hasError={errors.username && touched.username ? errors.username : null}
                  />
                    <Input 
                       type="email" 
                       name='email'
+                      value={formik.values.email}
                       placeholder='Email'
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      isError={errors.email && touched.email ? errors.email : null} //chequear el touched
+                      hasError={errors.email && touched.email ? errors.email : null} //chequear el touched
                       />
                    <Input 
                       type="password"
                       name='password'
+                      value={formik.values.password}
                       placeholder='Password'
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      isError={errors.password && touched.password ? errors.password : null} //sin el touched "funciona"
+                      hasError={errors.password && touched.password ? errors.password : null} //sin el touched "funciona"
                       /> 
                       <Input
                       type='password'
                       name='confirmPassword'
+                      value={formik.values.confirmPassword}
                       placeholder='Confirm Password'
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      isError={errors.confirmPassword && touched.confirmPassword ? errors.confirmPassword : null}
+                      hasError={errors.confirmPassword && touched.confirmPassword ? errors.confirmPassword : null}
                       />
-                  <LoginBtn onSubmit={handleSubmit} value='Login' type='submit'></LoginBtn>
+                  <LoginBtn onSubmit={handleSubmit} value='Register' type='submit'></LoginBtn>
                </FormContainer>
           <Link to={'/login'}>Already have an account? Sign In</Link> 
             </LoginContainer>  
