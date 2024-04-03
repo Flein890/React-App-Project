@@ -35,6 +35,7 @@ const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z
   })
 
   const {errors, touched, handleSubmit} = formik
+  
 
   return (
     <>
@@ -63,6 +64,7 @@ const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z
                    <Input 
                       type="email" 
                       name='email'
+                      value={formik.values.email}
                       placeholder='Email'
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
@@ -71,6 +73,7 @@ const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z
                    <Input 
                       type="password"
                       name='password'
+                      value={formik.values.password}
                       placeholder='Password'
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}

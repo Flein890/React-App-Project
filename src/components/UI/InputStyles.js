@@ -9,6 +9,7 @@ width: 100%;
 background-color: #fff;
 font-family: 'Montserrat';
 
+
 &:focus{
     outline: none;
     border:1px solid black;
@@ -16,3 +17,9 @@ font-family: 'Montserrat';
 `
 export const ErrorMessage  = styled.span`
     color: #f20;`
+
+export const InputContainer = styled.div`
+display: flex;
+justify-content: center;
+flex-direction: column;
+text-align:center`

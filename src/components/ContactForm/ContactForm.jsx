@@ -55,16 +55,14 @@ const validationSchema = Yup.object({
 const formik = useFormik({
   initialValues: contactInitialValues,
   validationSchema,
-  onSubmit: (values,{resetForm}) => {
-    console.log('datos enviados')
-    console.log(values)
-    resetForm()
+  onSubmit: (values,actions) => {
+    // console.log(values)
+     actions.resetForm();
+
   }
 })
 
 const {errors, touched, handleSubmit} = formik
-
-
 
   return (
     <DatosStyled>
@@ -85,6 +83,7 @@ const {errors, touched, handleSubmit} = formik
       <Input
         type="text"
         name="name"
+        value={formik.values.name}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         placeholder="Name" 
@@ -92,6 +91,7 @@ const {errors, touched, handleSubmit} = formik
       <Input
         type="email"
         name="email"
+        value={formik.values.email}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         placeholder="Email"
@@ -99,6 +99,7 @@ const {errors, touched, handleSubmit} = formik
       <Input
         type="number"
         name="cellphone"
+        value={formik.values.cellphone}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         placeholder="Cellphone"
@@ -106,6 +107,7 @@ const {errors, touched, handleSubmit} = formik
       <TextArea
         type="textarea"
         name="message"
+        value={formik.values.message}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         placeholder="Tell us something...."

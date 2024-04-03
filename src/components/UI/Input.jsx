@@ -1,9 +1,9 @@
 import React from 'react'
-import { InputForm,ErrorMessage } from './InputStyles'
+import { InputForm,ErrorMessage,InputContainer } from './InputStyles'
 
 function Input ({ type,name,hasError,...field }) {
     return (
-      <div>
+      <InputContainer>
         <InputForm 
         type={type} 
         name={name}
@@ -12,7 +12,7 @@ function Input ({ type,name,hasError,...field }) {
         />
   
         {hasError && <ErrorMessage>{hasError}</ErrorMessage>}
-      </div>
+      </InputContainer>
     );
   };
 export default Input

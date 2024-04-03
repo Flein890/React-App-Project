@@ -27,7 +27,7 @@ function CartItem({price,name,id,image,quantity}) {
      console.log(remove)
    },[remove])
 
-   console.log(productModal)
+  //  console.log(productModal)
 
  
   return (<>

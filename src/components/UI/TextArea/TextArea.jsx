@@ -1,9 +1,10 @@
 import React from 'react'
-import { TextAreaForm,ErrorMessage } from './TextAreaStyles';
+import { TextAreaForm,ErrorMessage,InputContainer } from './TextAreaStyles';
+import Input from '../Input';
 
 function TextArea ({ type,name,hasError,...field }) {
         return (
-            <div>
+            <InputContainer>
                 <TextAreaForm 
                 type={type} 
                 name={name}
@@ -12,7 +13,7 @@ function TextArea ({ type,name,hasError,...field }) {
                 />
     
                 {hasError && <ErrorMessage>{hasError}</ErrorMessage>}
-            </div>
+            </InputContainer>
         );
     };
 

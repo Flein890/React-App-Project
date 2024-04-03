@@ -18,3 +18,8 @@ resize: vertical;
     outline: none;
     border:1px solid black;
 }`
+export const InputContainer = styled.div`
+display: flex;
+justify-content: center;
+flex-direction: column;
+text-align:center`

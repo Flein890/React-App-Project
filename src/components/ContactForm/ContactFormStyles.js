@@ -33,12 +33,7 @@ input[type=number] { appearance:textfield; }
 `
 
 export const FormikStyles = styled(Formik)`
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* flex-wrap: wrap; */
-  /* align-items: center; */
-  /* justify-content:center; */
-  /* width: 100%; */
+ text-align: center;
  
 `
 export const HeadingSection = styled.div`
