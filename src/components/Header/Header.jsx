@@ -30,11 +30,11 @@ function Header() {
        </LogoContainer>    
         <nav className='nav'>
             <ul className={`ul ${isNavbarOpen ? 'open' : ''}`} >
-                <li ><Link className='link' to="/">Home</Link></li>
-                <li ><Link className='link' to="about">About</Link></li>
-                <li ><Link className='link' to="contact">Contact</Link></li>
-                <li ><Link className='link' to="products">Products</Link></li>
-                <Link to ='login'><ToLogin className={` ${isNavbarOpen ? 'login' : ''}`}>LOGIN</ToLogin></Link>
+                <li ><Link className='link' onClick={() => dispatch(toggleNavbar())} to="/">Home</Link></li>
+                <li ><Link className='link'onClick={() => dispatch(toggleNavbar())} to="about">About</Link></li>
+                <li ><Link className='link'onClick={() => dispatch(toggleNavbar())} to="contact">Contact</Link></li>
+                <li ><Link className='link'onClick={() => dispatch(toggleNavbar())} to="products">Products</Link></li>
+                <Link to ='login' onClick={() => dispatch(toggleNavbar())}><ToLogin className={` ${isNavbarOpen ? 'login' : ''}`}>LOGIN</ToLogin></Link>
             </ul>
         </nav>
         <button onClick={() => dispatch(toggleNavbar())} className='hamburger'><Line className={isNavbarOpen ? 'x' : ''}/><Line className={isNavbarOpen ? 'x2' : ''}/></button>

@@ -24,7 +24,7 @@ function CartItem({price,name,id,image,quantity}) {
 //   }
 
   useEffect(()=>{
-     console.log(remove)
+    //  console.log(remove)
    },[remove])
 
   //  console.log(productModal)
@@ -41,7 +41,7 @@ function CartItem({price,name,id,image,quantity}) {
          <HandlerAmount>{quantity===1 ? <IoMdTrash onClick={() =>{{
             dispatch(toggleProductModal());
 
-            productModal ?  dispatch(removeFromCart({id})) : console.log('faslooooooooooooooo')
+            productModal ?  dispatch(removeFromCart({id})) : null
 
             }}}/> : <FaMinus onClick={() => dispatch(removeFromCart({id}))}/>}</HandlerAmount>
          <Quantity>{quantity}</Quantity>
