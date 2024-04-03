@@ -9,6 +9,7 @@ import Cart from './components/Cart/Cart'
 import CartIcon from './components/Cart/CartIcon'
 import ContactForm from './components/ContactForm/ContactForm'
 import Register from './components/Register/Register'
+import About from './components/About/About'
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
         <Route path='login' element={<Login/>}/>
         <Route path='register' element={<Register/>}/>
         <Route path='contact' element={<ContactForm/>}/>
-        {/* <Route path='about' element={<About/>}/> */}
+        <Route path='about' element={<About/>}/>
         <Route path='*' element={<NotFound/>}/>
 
       </Routes>

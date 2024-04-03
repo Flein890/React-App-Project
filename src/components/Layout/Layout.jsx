@@ -9,11 +9,6 @@ function Layout() {
       <Hero />
       {/* <Featured/> */}
       <Section />
-  
-      {/* <Layout>
-        <Categories/>
-        <CardsProducts/>
-      </Layout> */}
       <Footer />
       </>
 
