@@ -42,7 +42,9 @@ align-items: center;
 gap: 10px;
 height: 50px;
 align-self: start;
-z-index: 1500;
+z-index: 900;
+animation: fadeIn 1s ease-in running backwards; 
+animation-delay: .5s;
 @media (max-width: 768px){
     display: none;
 }
@@ -53,12 +55,22 @@ img{
 @media (max-width: 976px){
   display: none;
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to{
+    opacity:1;
+  }
+}
 `
 export const FooterStyles = styled.div`
 color:#999;
 font-size: 14px;
 align-self: start;
 z-index: 900;
+animation: fadeIn 1s ease-in running backwards; 
+animation-delay: .7s;
 /* position: absolute;
     bottom:35px; */
 @media (max-width: 576px){
@@ -67,6 +79,7 @@ z-index: 900;
    left: 35px;
    width: 80%;
 }
+
 `
 
 
@@ -75,6 +88,7 @@ export const DatosStyled = styled.div`
  flex-direction: column;
  margin: 0 auto;
  height:100vh ;
+ z-index:500 ;
  justify-content:center;
  align-items: center;
  /* gap: 2em; */
@@ -117,7 +131,7 @@ export const DatosStyled = styled.div`
     position: absolute;
     bottom: 0;
     left: 0;
-    z-index: 0;
+    z-index: 800; 
     /* transform:rotate(170deg); */
     animation: goUp 1s backwards ease-in-out;
     animation-fill-mode: backwards;

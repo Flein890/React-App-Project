@@ -12,11 +12,15 @@ export const navbarSlice = createSlice({
             // console.log(state.isOpen)
             return {...state, isOpen: !state.isOpen};
         },
+        closeNav: (state) => {
+            return {...state, isOpen: false};
+        }
     }
 });
 
 export const {
-    toggleNavbar
+    toggleNavbar,
+    closeNav
 } = navbarSlice.actions;
 
 export default navbarSlice.reducer

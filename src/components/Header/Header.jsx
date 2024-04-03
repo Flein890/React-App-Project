@@ -4,21 +4,14 @@ import logo from '../../images/logo.svg'
 import { Link , Outlet } from 'react-router-dom'
 import {useSelector} from 'react-redux'
 import { useDispatch } from 'react-redux'
-import { toggleNavbar} from '../../redux/NavbarSlice'
+import { toggleNavbar, closeNav} from '../../redux/NavbarSlice'
 import { LogoContainer, ToLogin,Line,BussinessName  } from './HeaderStyles'
-import { useEffect } from 'react'
 
 function Header() {
 
     const isNavbarOpen = useSelector((state) => state.navbar.isOpen);
-    // console.log(isNavbarOpen)
+
     const dispatch = useDispatch()
-    
-    // useEffect(()=>{
-    //   if(!isNavbarOpen){
-    //     dispatch(toggleNavbar( ));
-    //   }
-    // },[dispatch])
 
   return (
 <>
@@ -30,11 +23,11 @@ function Header() {
        </LogoContainer>    
         <nav className='nav'>
             <ul className={`ul ${isNavbarOpen ? 'open' : ''}`} >
-                <li ><Link className='link' onClick={() => dispatch(toggleNavbar())} to="/">Home</Link></li>
-                <li ><Link className='link'onClick={() => dispatch(toggleNavbar())} to="about">About</Link></li>
-                <li ><Link className='link'onClick={() => dispatch(toggleNavbar())} to="contact">Contact</Link></li>
-                <li ><Link className='link'onClick={() => dispatch(toggleNavbar())} to="products">Products</Link></li>
-                <Link to ='login' onClick={() => dispatch(toggleNavbar())}><ToLogin className={` ${isNavbarOpen ? 'login' : ''}`}>LOGIN</ToLogin></Link>
+                <li ><Link className='link' onClick={() => dispatch(closeNav())} to="/">Home</Link></li>
+                <li ><Link className='link'onClick={() => dispatch(closeNav())} to="about">About</Link></li>
+                <li ><Link className='link'onClick={() => dispatch(closeNav())} to="contact">Contact</Link></li>
+                <li ><Link className='link'onClick={() => dispatch(closeNav())} to="products">Products</Link></li>
+                <Link to ='login' onClick={() => dispatch(closeNav())}><ToLogin className={` ${isNavbarOpen ? 'login' : ''}`}>LOGIN</ToLogin></Link>
             </ul>
         </nav>
         <button onClick={() => dispatch(toggleNavbar())} className='hamburger'><Line className={isNavbarOpen ? 'x' : ''}/><Line className={isNavbarOpen ? 'x2' : ''}/></button>
