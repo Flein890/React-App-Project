@@ -8,6 +8,7 @@ import Login from './components/Login/Login'
 import Cart from './components/Cart/Cart'
 import CartIcon from './components/Cart/CartIcon'
 import ContactForm from './components/ContactForm/ContactForm'
+import VerifyCode from './components/VerifyCode/VerifyCode'
 import Register from './components/Register/Register'
 import About from './components/About/About'
 
@@ -22,6 +23,7 @@ function App() {
         <Route path='products' element={<CardsProducts/>}/>
         <Route path='login' element={<Login/>}/>
         <Route path='register' element={<Register/>}/>
+        <Route path='verify' element={<VerifyCode/>} />
         <Route path='contact' element={<ContactForm/>}/>
         <Route path='about' element={<About/>}/>
         <Route path='*' element={<NotFound/>}/>

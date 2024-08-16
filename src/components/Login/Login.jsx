@@ -10,14 +10,20 @@ import * as Yup from 'yup'
 import LoginBtn from '../UI/LoginBtn'
 import Input from '../UI/Input'
 import {Outlet} from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { loginFunc } from '../../../db/fetch'
+import { setCurrentUser } from '../../redux/userSlice'
+
 function Login() {
+
+  const dispatch=useDispatch()
 
 const passRegexp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/
 const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
           
   const validationSchema = Yup.object({
     email: Yup.string().email('Invalid email').matches(emailRegexp, 'Please enter a valid email').required(),
-    password: Yup.string().matches(passRegexp, 'Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters').required(),
+    password: Yup.string().matches(passRegexp, 'Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters').required("Email Required"),
   })
   
   const formik = useFormik({
@@ -27,10 +33,20 @@ const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z
     },
     validationSchema
     ,
-    onSubmit: (values,{resetForm}) => {
-      // console.log('datos enviados')
+    onSubmit: async (values,{resetForm}) => {
+      const user = await loginFunc(values.email,values.password);
+      if(user){
+        dispatch(setCurrentUser({
+          ...user.user,
+          token:user.token
+        }))
+        resetForm()
+      }
+      console.log(user)
+      console.log(useSelector(state => state.user.currentUser))
       console.log(values)
-      resetForm()
+      // console.log('datos enviados')
+      
     }
   })
 

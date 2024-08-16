@@ -9,20 +9,22 @@ import categoriesReducer from "../redux/categoriesSlice"
 import modalReducer from '../redux/modalSlice'
 import addReducer from '../redux/addSlice'
 import productModalReducer from '../redux/productModal'
+import userReducer from '../redux/userSlice'
 
 const reducers = combineReducers({
     navbar: navbarReducer,
     cart: cartReducer,
-    categories: categoriesReducer ,
+    categories: categoriesReducer,
     modal:modalReducer,
     add: addReducer,
-    productModal: productModalReducer
+    productModal: productModalReducer,
+    user: userReducer
 });
 
 const persistConfig = {
     key: 'root',
     storage,
-    whitelist: ['cart'], //agregar cart despues para persistir los datos
+    whitelist: ['cart','user'], //agregar cart despues para persistir los datos
     
 }
 

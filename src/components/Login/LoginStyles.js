@@ -17,7 +17,7 @@ export const LeftSide = styled.div`
     justify-content: space-between;
     height: 100vh;
     width: 50vw;
-    @media (max-width: 768px){
+    @media (max-width: 976px){
          justify-content:center ;
        
          height: 100vh;
@@ -67,7 +67,7 @@ export const FooterStyles = styled.div`
 color:#999;
 font-size: 14px;
 align-self: start;
-@media (max-width: 768px){
+@media (max-width: 976px){
     position: absolute;
     bottom:35px;
     left:35px;
@@ -81,7 +81,7 @@ gap: 10px;
 height: 50px;
 align-self: start;
 font-family: 'Montserrat',system-ui ;
-@media (max-width: 768px){
+@media (max-width: 976px){
     display: none;
 }
 
@@ -111,7 +111,7 @@ export const RightSide = styled.div`
     background-color: #9942DB;
     gap:40px;
 
-    @media (max-width: 768px) {
+    @media (max-width: 976px) {
         display: none;
     }
 

@@ -7,7 +7,16 @@ import Input from '../UI/Input'
 import { Link } from 'react-router-dom'
 import LoginBtn from '../UI/LoginBtn'
 import LoginStyles, { FormContainer,Linkers,FooterStyles,LeftSide,VideoWrapper,Features, RightSide,HeadingSection,LoginContainer  } from '../Login/LoginStyles'
+import { registerFunc } from '../../../db/fetch'
+import { setCurrentUser } from '../../redux/userSlice'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+
+
 function Register () {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     const passRegexp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/
     const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
             
@@ -27,12 +36,29 @@ function Register () {
           },
       validationSchema
       ,
-      onSubmit: (values,{resetForm}) => {
-        console.log('datos enviados')
+      onSubmit:async(values,actions)=>{
         console.log(values)
-        resetForm()
-      }
-    })
+    const user =await registerFunc(values.username,values.email,values.password);
+    // formik.handleSubmit
+    actions.resetForm();
+    if(user){
+      dispatch(setCurrentUser({
+        ...user.user,
+        token:user.token
+      }));
+      //si se puede crear el usuario va a la pagina de verificacion
+      navigate('/verify')
+    }
+
+   }}
+      // onSubmit: (values,{resetForm}) => {
+      //   //tengo q ejecutar la funcion del post aca para que se envien los values supongo
+      //   // console.log('datos enviados')
+      //   // console.log(values)
+      //   // resetForm()
+        
+      // }
+    )
   
     const {errors, touched, handleSubmit} = formik
     return(
@@ -58,7 +84,7 @@ function Register () {
            </HeadingSection>  
            <LoginContainer>
                <h2>Register</h2>
-               <FormContainer onSubmit={formik.handleSubmit}>
+               <FormContainer>
                 <Input
                       type="text"
                       name='username'
