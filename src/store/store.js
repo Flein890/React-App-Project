@@ -10,6 +10,9 @@ import modalReducer from '../redux/modalSlice'
 import addReducer from '../redux/addSlice'
 import productModalReducer from '../redux/productModal'
 import userReducer from '../redux/userSlice'
+import codeSliceReducer  from "../redux/codeSlice";
+
+//importar bien los reducers
 
 const reducers = combineReducers({
     navbar: navbarReducer,
@@ -18,20 +21,23 @@ const reducers = combineReducers({
     modal:modalReducer,
     add: addReducer,
     productModal: productModalReducer,
-    user: userReducer
+    user: userReducer,
+    codeState: codeSliceReducer,
 });
 
 const persistConfig = {
     key: 'root',
     storage,
-    whitelist: ['cart','user'], //agregar cart despues para persistir los datos
+    whitelist: ['cart','user'], //agregar para persistir los datos
     
 }
 
 const persistedReducer = persistReducer(persistConfig, reducers);
 
 const store = configureStore({
+//funciones reductoras
 reducer : persistedReducer,
+//middlewares
 middleware: (getDefaultMiddleware) =>
   getDefaultMiddleware({
     serializableCheck: false,

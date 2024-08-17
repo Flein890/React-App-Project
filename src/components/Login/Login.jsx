@@ -99,7 +99,7 @@ const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z
                </FormContainer>
               <Linkers><Link to={'/'}>Forgot Password?</Link><span>or</span><Link to={'/register'} >Register</Link></Linkers>    
             </LoginContainer>
-            <FooterStyles>Copyright © Pappu. Made with love and magic by Franco </FooterStyles>  
+            <FooterStyles>Copyright © Pappu. Made with love and magic by Franco Villanova </FooterStyles>  
            </LeftSide>
      
 
