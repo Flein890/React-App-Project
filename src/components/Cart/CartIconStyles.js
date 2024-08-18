@@ -7,7 +7,9 @@ import styled from 'styled-components';
     width: 50px;
     height: 50px;
     font-size: 20px;
-    border-radius: 50%;
+    /* border-radius: 50%; */
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
     background-color: #FFE3D3;
     cursor: pointer;
     /* position:absolute; */

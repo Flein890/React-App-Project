@@ -8,7 +8,6 @@ import { useDispatch,useSelector } from 'react-redux'
 function CartIcon() {
 
   const NavOpenToToggleIcon = useSelector((state)=> state.navbar.isOpen) //cuando es true desaparecemos el icono
-
   
     const dispatch = useDispatch()
     const totalCartItems = useSelector((state) => state.cart.cartItems).reduce((acc,cur) =>(acc+=cur.quantity),0) 

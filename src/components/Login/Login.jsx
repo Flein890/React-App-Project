@@ -1,9 +1,9 @@
 import React from 'react'
 import LoginStyles from './LoginStyles'
-import {Link,NavLink} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import { LeftSide,LoginContainer,FormContainer,Linkers,FooterStyles,HeadingSection } from './LoginStyles'
 import { RightSide, VideoWrapper,Features } from './LoginStyles'
-import logo from '../../images/logo.svg'
+import logo from '../../images/logo.png'
 import video from '../../assets/video/Greet.mp4'
 import {useFormik} from 'formik'
 import * as Yup from 'yup'
@@ -72,7 +72,6 @@ const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z
           <LeftSide>
            <HeadingSection>
               <img src={logo} alt="logo" />
-              <h3>Pappu</h3>
            </HeadingSection>    
            <LoginContainer>
               <h2>Email Login</h2>

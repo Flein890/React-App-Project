@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import * as Yup from 'yup'
 import video from '../../assets/video/Greet.mp4'
-import logo from '../../images/logo.svg'
+import logo from '../../images/logo.png'
 //components
 import VerifyContainer from './VerifyStyles'
 import LoginStyles ,{ HeadingSection,LoginContainer,Features,VideoWrapper,RightSide, FormContainer,Linkers,FooterStyles } from '../Login/LoginStyles'
@@ -90,7 +90,7 @@ function VerifyCode() {
             </Features>
         </RightSide>
         <VerifyContainer>
-            <HeadingSection><img src={logo} alt="Logo" /><h3>Pappu</h3></HeadingSection>
+            <HeadingSection><img src={logo} alt="Logo" /></HeadingSection>
             <LoginContainer>
               <h2>Verify Your Account</h2>
                 <FormContainer onSubmit={formik.handleSubmit}>

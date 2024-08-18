@@ -7,7 +7,7 @@ import ScrollReveal from 'scrollreveal'
 import LoginBtn from '../UI/LoginBtn'
 import { FormikStyles, DatosStyled, ContactTitle, FormStyles,PurpleBackgroundBar,FormAndTitleContainer} from './ContactFormStyles'
 import { HeadingSection } from './ContactFormStyles'
-import logo from '../../images/logo.svg'
+import logo from '../../images/logo.png'
 import TextArea from '../UI/TextArea/TextArea'
 import { FooterStyles } from './ContactFormStyles'
 
@@ -67,7 +67,6 @@ const {errors, touched, handleSubmit} = formik
     <DatosStyled>
         <HeadingSection>
               <img src={logo} alt="logo" />
-              <h3>Pappu</h3>
            </HeadingSection>    
 
            <FormAndTitleContainer>

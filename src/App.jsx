@@ -11,12 +11,14 @@ import ContactForm from './components/ContactForm/ContactForm'
 import VerifyCode from './components/VerifyCode/VerifyCode'
 import Register from './components/Register/Register'
 import About from './components/About/About'
+import Account from './components/Account/Account'
 
 function App() {
   return (
     <BrowserRouter>
        <Header/>
         <CartIcon />
+        <Account/>
      <Cart />
       <Routes>
         <Route path='/' element={<Layout/>}/>

@@ -1,6 +1,6 @@
 import react from 'react'
 import video from '../../assets/video/Greet.mp4'
-import logo from '../../images/logo.svg'
+import logo from '../../images/logo.png'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import Input from '../UI/Input'
@@ -80,7 +80,6 @@ function Register () {
            <LeftSide>
             <HeadingSection>
               <img src={logo} alt="logo" />
-              <h3>Pappu</h3>
            </HeadingSection>  
            <LoginContainer>
                <h2>Register</h2>
