@@ -107,7 +107,6 @@ function VerifyCode() {
                   <LoginBtn onSubmit={handleSubmit} value='Verify' type='submit'></LoginBtn>
                </FormContainer>
                {codeState.code && <p style={{color:'red'}}>Invalid code</p>}
-              <Linkers><Link to={'/login'}>Sign in</Link><span>or</span><Link to={'/register'}>Register</Link></Linkers>    
             </LoginContainer>
 
         <FooterStyles>©2024 Pappu. Made with love and magic by Franco Villanova</FooterStyles>

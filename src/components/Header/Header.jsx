@@ -1,6 +1,6 @@
 import React from 'react'
 import { HeaderStyles, HeaderContainer } from './HeaderStyles'
-import logo from '../../images/logo.png'
+import logoheader from "../../images/logoheader.png"
 import { Link , Outlet } from 'react-router-dom'
 import {useSelector} from 'react-redux'
 import { useDispatch } from 'react-redux'
@@ -18,7 +18,7 @@ function Header() {
     <HeaderContainer>
       <HeaderStyles  className={isNavbarOpen ? 'navInvert' : ''}>
         <LogoContainer>
-          <img className='logo' alt="logo" />
+          <img src={logoheader} className='logo' alt="logo" />
           <BussinessName>Pappu</BussinessName>
        </LogoContainer>    
         <nav className='nav'>

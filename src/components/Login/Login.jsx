@@ -83,7 +83,7 @@ const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z
                       placeholder='Email'
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      hasError={errors.email && touched.email ? errors.email : null} //chequear el touched
+                      hasError={errors.email && touched.email ? errors.email : null} //Touched = si hicimos click en el input
                       />
                    <Input 
                       type="password"
@@ -92,7 +92,7 @@ const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z
                       placeholder='Password'
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      hasError={errors.password && touched.password ? errors.password : null} //sin el touched "funciona"
+                      hasError={errors.password && touched.password ? errors.password : null} 
                       /> 
                   <LoginBtn onSubmit={handleSubmit} value='Login' type='submit'></LoginBtn>
                </FormContainer>
