@@ -37,7 +37,7 @@ function Register () {
       validationSchema
       ,
       onSubmit:async(values,actions)=>{
-        console.log(values)
+        // console.log(values)
     const user =await registerFunc(values.username,values.email,values.password);
     // formik.handleSubmit
     actions.resetForm();
