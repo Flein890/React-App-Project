@@ -28,7 +28,7 @@ function CardsProducts() {
       opacity:0,
     })
   })
-
+ 
   //I bring the selected category from the store to filter the products
   const selectedCategory = useSelector(state => state.categories.selectedCategory);
   // console.log(selsectedCategory)

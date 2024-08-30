@@ -16,6 +16,7 @@ import { Anything } from './CartStyles'
 import {toggleProductModal} from '../../redux/productModal.js'
 import { trueProductModal,falseProductModal } from '../../redux/cartMenuSlice.js'
 import { Overlay,CloseCart } from './CartStyles'
+import { useNavigate } from 'react-router-dom'
 
 function Cart() {
   const dispatch = useDispatch();
@@ -28,7 +29,7 @@ function Cart() {
 
   const cartItems = useSelector ((state)=> state.cart.cartItems);
 
-
+  
 
 
   useEffect(() => {
@@ -67,7 +68,7 @@ function Cart() {
         </CartContainer>    
         <TotalContainer>
           <Total>Total: ${roundToTwoDecimal(totalPrice)}</Total>
-            <CheckoutBtn value={'Checkout'} disabled={!cartItems.length}/>
+            <CheckoutBtn  value={'Checkout'} disabled={!cartItems.length}/>
         </TotalContainer>
     </CartStyles>
     </>

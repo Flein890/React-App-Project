@@ -9,6 +9,12 @@ export const VerifyContainer = styled.div`
     width: 50vw;
     padding:40px;
     
+    @media (max-width: 976px){
+         justify-content:center ;
+       
+         height: 100vh;
+         width: 100vw;  
+        }
 
 `
                                                                 

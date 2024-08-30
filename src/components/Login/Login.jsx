@@ -1,6 +1,6 @@
 import React from 'react'
 import LoginStyles from './LoginStyles'
-import {Link} from 'react-router-dom'
+import {Link, Navigate} from 'react-router-dom'
 import { LeftSide,LoginContainer,FormContainer,Linkers,FooterStyles,HeadingSection } from './LoginStyles'
 import { RightSide, VideoWrapper,Features } from './LoginStyles'
 import logo from '../../images/logo.png'
@@ -13,10 +13,14 @@ import {Outlet} from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { loginFunc } from '../../../db/fetch'
 import { setCurrentUser } from '../../redux/userSlice'
+import { useNavigate } from 'react-router-dom'
+
 
 function Login() {
 
-  const dispatch=useDispatch()
+  const dispatch=useDispatch();
+  const navigate= useNavigate();
+
 
 const passRegexp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/
 const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
@@ -35,6 +39,16 @@ const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z
     ,
     onSubmit: async (values,{resetForm}) => {
       const user = await loginFunc(values.email,values.password);
+
+      // isVerified(user)
+      
+const isVerified = (userVerified) =>{
+  if(!userVerified.user.verified){
+ navigate("/verify")
+  }
+}
+isVerified(user)
+
       if(user){
         dispatch(setCurrentUser({
           ...user.user,
@@ -45,7 +59,7 @@ const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z
       console.log(user)
       console.log(useSelector(state => state.user.currentUser))
       console.log(values)
-      // console.log('datos enviados')
+
       
     }
   })
