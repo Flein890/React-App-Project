@@ -11,7 +11,7 @@ function Account(){
 
     return(
     <AccountUserStyled>
-         <span>{userName}</span>
+         {/* <span>{userName}</span> */}
         <i className="fa-solid fa-user"></i>
     </AccountUserStyled>
     )
