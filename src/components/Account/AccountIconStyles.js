@@ -13,12 +13,11 @@ display: flex;
     border-top-left-radius: 50%;
     background-color: #FFE3D3;
     cursor: pointer;
-    /* position:absolute; */
     top: 45px;
     right: 100px;
     position: fixed;
     cursor: pointer;    
-    z-index: 1000;
+    z-index: 700;
 
     @media(max-width:976px){
       width: 30px;

@@ -29,5 +29,5 @@ function CheckoutBtn({value,disabled}) {
     <CheckoutBtnStyles style = {{cursor: disabled ? 'not-allowed' : 'pointer', backgroundColor: disabled ? '#666' : '#8330C4'}}  onClick={cartItems.length ? ()=> dispatch(toggleModal()): null}>{value}</CheckoutBtnStyles>
   )
 }
-
+//en el checkOutBtn como adivional se puede agregar user.verified , es decir cartItems.length && user.verified ? tata : lele
 export default CheckoutBtn
