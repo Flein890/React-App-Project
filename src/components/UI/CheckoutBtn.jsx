@@ -26,7 +26,7 @@ function CheckoutBtn({value,disabled}) {
   const user = useSelector((state) => state.user.currentUser)
 
   return (
-    <CheckoutBtnStyles style = {{cursor: disabled ? 'not-allowed' : 'pointer', backgroundColor: disabled ? '#666' : '#8330C4'}}  onClick={cartItems.length && user.verified ? ()=> dispatch(toggleModal()): null}>{value}</CheckoutBtnStyles>
+    <CheckoutBtnStyles style = {{cursor: disabled ? 'not-allowed' : 'pointer', backgroundColor: disabled ? '#666' : '#8330C4'}}  onClick={cartItems.length ? ()=> dispatch(toggleModal()): null}>{value}</CheckoutBtnStyles>
   )
 }
 

@@ -86,7 +86,7 @@ function VerifyCode() {
             <Features>
             <span><i className="fa-regular fa-circle-check"></i>Book more meetings</span>
             <span><i className="fa-regular fa-circle-check"></i>Build more trust and convert more sales</span>
-            <span><i className="fa-regular fa-circle-check"></i>Build stronger relationship using PAPU</span>
+            <span><i className="fa-regular fa-circle-check"></i>Build stronger relationship using PAPPU</span>
             </Features>
         </RightSide>
         <VerifyContainer>
