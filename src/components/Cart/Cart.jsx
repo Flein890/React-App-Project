@@ -16,7 +16,7 @@ import { Anything } from './CartStyles'
 import {toggleProductModal} from '../../redux/productModal.js'
 import { trueProductModal,falseProductModal } from '../../redux/cartMenuSlice.js'
 import { Overlay,CloseCart } from './CartStyles'
-import { useNavigate } from 'react-router-dom'
+
 
 function Cart() {
   const dispatch = useDispatch();
@@ -30,7 +30,6 @@ function Cart() {
   const cartItems = useSelector ((state)=> state.cart.cartItems);
 
   
-
 
   useEffect(() => {
     if(modalOpen){

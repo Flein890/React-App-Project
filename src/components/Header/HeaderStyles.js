@@ -157,7 +157,7 @@ background-color: #fafafa;
         justify-content:center ;
         transform: translateY(0px);
         transition: all .2s ease-out;
-        z-index: 500;
+    
         .link{
             color: #fff;
            font-size: 2rem;

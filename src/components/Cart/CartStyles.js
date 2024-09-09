@@ -25,6 +25,7 @@ const CartStyles = styled.div`
         right: 0;
         top:0 ;
         border-radius: 0;
+        z-index: 2000;
     }
     `
     

@@ -25,6 +25,8 @@ display: flex;
       background-color: transparent;
       top: 15px;
       right: 120px;
+      z-index: 1000;
     }
+
     
     `

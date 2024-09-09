@@ -10,7 +10,7 @@
  display: flex;
  justify-content: center;
  align-items: center;
- transition: all .2s;
+ transition: translateY .2s;
  transform: translateY(100px);
 animation: goUp .8s ease-in-out running alternate;
  gap: 5px; 
