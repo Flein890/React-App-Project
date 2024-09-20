@@ -12,7 +12,7 @@ function AccountMenu() {
   const dispatch = useDispatch();
   //------PROBANDO QUE EL USUARIO SE DESLOGUEE CORRECTAMENTE-------
   useEffect(() => {
-    console.log(user)
+    // console.log(user)
   },[dispatch])
   //________________________________________________________________
 

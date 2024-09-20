@@ -56,7 +56,7 @@ isVerified(user)
         }))
         resetForm()
       }
-      console.log(user)
+      // console.log(user)
       console.log(useSelector(state => state.user.currentUser))
       console.log(values)
 
